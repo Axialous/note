@@ -1,0 +1,23 @@
+* {
+    color: black;
+    font-weight: normal;
+    font-style: normal;
+    font-size: 1em;
+
+    text-decoration: none;
+    background: none;
+    appearance: none;
+
+    padding: 0;
+    border: 0;
+    margin: 0;
+}
+
+@font-face {
+    font-family: 'Nunito';
+    src: url("/fonts/Nunito-Regular.ttf");
+}
+@font-face {
+    font-family: 'RobotoSlab';
+    src: url("/fonts/RobotoSlab-Regular.ttf");
+}
