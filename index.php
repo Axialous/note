@@ -12,7 +12,9 @@
             <main>
                 <section id="presentation">
                 </section>
-
+                <?php
+                include 'PHP/presentation.php'
+                ?>   
                 <section id="grille">
                 <?php
                 include 'PHP/tableau-categorie.php'
