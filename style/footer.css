@@ -1,106 +1,124 @@
 @import "ressources.css";
-.contener{
-    background:linear-gradient(to bottom, #D21C31,70%,rgb(29, 28, 28));
-    width: 100%;
-    height: auto;
-    display: flex;
-    flex-flow: column;
-    box-sizing: border-box;
+
+.contener {
+  background: linear-gradient(to bottom, #D21C31, 70%, rgb(29, 28, 28));
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-flow: column;
+  box-sizing: border-box;
+  outline: 10px double rgba(36, 33, 33, 0.863);
+
 }
-.logo-site{
-    margin: 10% 0 20px 5%;
-    width: 70%;
-    height: 250px;
-    background-image:url(../picture/Note-logo.svg);
-    background-size: 100%;
-    background-repeat: no-repeat;
+
+.logo-site {
+  margin: 10% 0 20px 5%;
+  width: 70%;
+  height: 250px;
+  background-image: url(../picture/Note-logo.svg);
+  background-size: 100%;
+  background-repeat: no-repeat;
 }
-.text{
-    width: 70%;
-line-height: 30px;
-margin: 10px 0 10px 5%;
-color: #fff;
-background-color: rgba(0, 0, 0, 0.007);
+
+.text {
+  width: 70%;
+  line-height: 30px;
+  margin: 10px 0 10px 5%;
+  color: #fff;
+  background-color: rgba(0, 0, 0, 0.007);
 }
-.text h4{
+
+.text h4 {
   font-size: 20px;
 }
-.logo-reseau{
+
+.logo-reseau {
+  width: 100%;
+  height: 50px;
+  font-size: 35px;
+  cursor: pointer;
+  color: #fff;
+  margin: 20px 0;
+}
+
+.souligne {
+  width: 70%;
+  height: 3px;
+  background-color: rgba(8, 7, 7, 0.6);
+  margin-bottom: 10px;
+
+}
+
+.petit-souligne {
+  width: 10%;
+  height: 4px;
+  background-color: rgb(255, 255, 255);
+  animation: 5s glissement linear infinite;
+}
+
+@keyframes glissement {
+  0% {
+    transform: translateX(0);
+
+  }
+
+  20% {
+    transform: translateX(200%);
+
+  }
+
+  40% {
+    transform: translateX(400%);
+
+  }
+
+  60% {
+    transform: translateX(600%);
+
+  }
+
+  80% {
+    transform: translateX(800%);
+
+  }
+
+  100% {
+    transform: translateX(1000%);
+
+  }
+}
+
+@media screen and (min-width: 440px) {
+  .contener {
+    flex-flow: row;
+    align-items: flex-start;
+    justify-content: space-around;
+    justify-items: center;
+
+  }
+
+  .logo-site {
+    margin: 0 0;
+    width: 100%;
+    height: 300px;
+    background-size: contain;
+    background-position: center;
+  }
+
+  .logo-reseau {
     width: 100%;
     height: 50px;
-    font-size: 35px;
-    cursor: pointer; 
-    color:#fff;
-    margin: 20px 0;
-}
-.souligne{
-   width: 60%;
-    height: 3px;
-    background-color: rgba(8, 7, 7, 0.6);
+    font-size: 200%;
+
+  }
+
+  .text {
+    margin-top: 50px;
+  }
+
+  .text h4 {
+    font-size: 40px;
     margin-bottom: 10px;
-
-}
-.petit-souligne{
-    width: 10%;
-    height: 4px;
-    background-color: rgb(255, 255, 255);
-    animation: 5s glissement linear infinite;
-}
-@keyframes glissement {
-    0% {
-      transform: translateX(0);
-     
-    }
-    20% {
-      transform: translateX(200%);
-      
-    }
-  
-    40% {
-      transform: translateX(400%);
-      
-    }
-  
-    60% {
-      transform: translateX(600%);
-      
-    }
-  
-    80% {
-      transform: translateX(800%);
-      
-    }
-  
-    100% {
-      transform: translateX(1000%);
-      
-    }
   }
 
-  @media screen and (min-width: 440px){
-      .contener{
-          flex-flow: row;
-          align-items:flex-start;
-          justify-content: space-around;
-          justify-items: center;
-
-      }
-      .logo-site{
-        margin: 0 0;
-        width: 100%;
-        height: 300px;
-        background-size: contain;
-        background-position: center;
-    }
-    .logo-reseau{
-        width: 100%;
-        height: 50px;
-        font-size: 200%;
-
-    }
-    .text{
-        margin-top: 50px;
-    }
-      
-  }
-
+}

@@ -13,45 +13,57 @@
                           "cat8";
     grid-gap:20px;
     padding: 20px 0px;
-    background:linear-gradient(to top,#6A392B,#824838,#731C24,#A91C2B);
+
+ background:linear-gradient(to bottom,#6A392B,#824838,#731C24,#A91C2B,#D21C31);
+}
+.instru p{
+    position: absolute;
+    font-size: 70px;
+    color: #FFF;
+    font-family: 'GreatVibes';
+    
 }
 .corde-frotté{
-    width: 100%;
+    width: 95%;
     height: 300px;
+    padding-left:5%;
     grid-area:cat1;
 }
 .corde-pincé{
-    width: 100%;
+    width: 95%;
     height: 300px;
     grid-area:cat2;
 }
 .corde-frappé{
-    width: 100%;
+    width: 95%;
     height: 300px;
+    padding-left:5%;
     grid-area:cat3;
 }
 .bois{
-    width: 100%;
+    width: 95%;
     height: 300px;
     grid-area:cat4;
 }
 .cuivre{
-    width: 100%;
+    width: 95%;
     height: 300px;
+    padding-left:5%;
     grid-area:cat5;
 }
 .percussion-clavier{
-    width: 100%;
+    width: 95%;
     height: 300px;
     grid-area:cat6;
 }
 .percussion-peau{
-    width: 100%;
+    width: 95%;
     height: 300px;
+    padding-left:5%;
     grid-area:cat7;
 }
 .percussion-accessoire{
-    width: 100%;
+    width: 95%;
     height: 300px;
     grid-area:cat8;
 }
@@ -72,7 +84,6 @@ img {
                               "cat5 cat6"
                               "cat7 cat8";
         grid-gap:20px;
-        margin: 20px 0;
     }
     
 }
