@@ -6,7 +6,7 @@
     box-shadow:2px 0px 32px 18px #000000 ;
 }
 .contener-presentation{
-    background: linear-gradient(to bottom,#23201E,#3a1d15);
+    background: linear-gradient(to bottom,#000000,90%,#3a1d15);
     padding-bottom: 30px;
 
 }
