@@ -1,5 +1,3 @@
-<link rel="stylesheet" href="style/tableau-categorie.css">
-<link rel="stylesheet" href="style/font.css">
 <div class="contener-categorie">
     <div class="corde-frotté instru">
     <p>Corde frottées</p>

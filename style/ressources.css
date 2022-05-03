@@ -24,3 +24,12 @@
     font-family: 'RobotoSlab';
     src: url("../fonts/RobotoSlab-Regular.ttf");
 }
+
+@font-face {
+    font-family: 'NanumMyeongjo';
+    src: url('../fonts/NanumMyeongjo-Regular.ttf');
+}
+@font-face {
+    font-family: 'GreatVibes';
+    src: url('../fonts/GreatVibes-Regular.ttf');
+}

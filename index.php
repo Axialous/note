@@ -7,7 +7,11 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="style/header.css">
-        <script src="JS/JavaSript.js"></script>
+        <link rel="stylesheet" href="style/presentation.css">
+        <link rel="stylesheet" href="style/tableau-categorie.css">
+        <link rel="stylesheet" href="style/footer.css">
+        <script src='java\presentation.js' async></script>
+        <script src="https://kit.fontawesome.com/29ac4cabe1.js"></script>
     </head>
     <body>
 

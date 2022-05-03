@@ -1,6 +1,3 @@
-<link rel="stylesheet" href="style/footer.css">
-<script src="https://kit.fontawesome.com/29ac4cabe1.js"></script>
-
 <div class="contener">
 
     <div class="logo-site"></div>

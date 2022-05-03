@@ -1,7 +1,3 @@
-<link rel="stylesheet" href="style\presentation.css">
-<script src='java\presentation.js' async></script>
-
-
 <div class="contener-presentation">
    
 

@@ -5,7 +5,11 @@ header {
     top: 0;
 
     background: linear-gradient(0deg, #51291E, 20%, #A91C2B);
+    box-shadow: 0 0 30px hsla(13, 50%, 95%, 0.25);
+
     padding: 20px 3.5%;
+
+    z-index: 10;
 }
 
 header > div {
@@ -221,9 +225,6 @@ header nav > input:checked + div {
 
 
 
-#grille {
-    height: 3000px;
-}
 
 
 /* BARRE DE RECHERCHE */
