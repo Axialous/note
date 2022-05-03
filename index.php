@@ -16,6 +16,9 @@
         ?>
             <main>
                 <section id="presentation">
+                <?php
+                include 'PHP/presentation.php'
+                ?>   
                 </section>
               
                 <section id="grille">
