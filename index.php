@@ -21,6 +21,10 @@
             <section id="grille">
             </section>
         </main>
-        
+        <footer>
+         <?php
+         include 'PHP/footer.php'
+         ?>
+        </footer>
     </body>
 </html>
