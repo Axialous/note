@@ -7,7 +7,6 @@
   display: flex;
   flex-flow: column;
   box-sizing: border-box;
-  outline: 10px double rgba(36, 33, 33, 0.863);
 
 }
 

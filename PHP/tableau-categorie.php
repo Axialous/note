@@ -1,5 +1,5 @@
 <link rel="stylesheet" href="style/tableau-categorie.css">
-<link rel="stylesheet" href="style\font.css">
+<link rel="stylesheet" href="style/font.css">
 <div class="contener-categorie">
     <div class="corde-frotté instru">
     <p>Corde frottées</p>
@@ -30,7 +30,7 @@
     <img src="picture\instruments-percussion-peau.jpg" alt="percussion-peau">
     </div>
     <div class="percussion-accessoire instru">
-        <p>Percussion accessoire</p>
+        <p>Accessoire</p>
     <img src="picture\instruments-percussion-accessoire.jpg" alt="percussion-accessoire">
     </div>
 </div>
