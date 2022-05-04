@@ -1,0 +1,22 @@
+@import url(../style\ressources.css);
+.contenair-categorie{
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-flow:row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+    align-content: space-around; 
+}
+.instru{
+ width: 600px;
+ height: 300px;
+ border: 2px solid; 
+ margin: 20px 0;
+}
+.instru img{
+    width: 100%;
+    height: 95%;
+    border: 2px solid ;
+}
