@@ -1,4 +1,21 @@
-
+<?php
+            $servname = "localhost"; $dbname = "note"; $user = "root"; $pass = "";
+            try{
+                $dbco = new PDO("mysql:host=$servname;dbname=$dbname", $user, $pass);
+                $dbco->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+                $sth = $dbco->prepare("
+                SELECT ID,Nom,Photo
+                FROM categories
+                
+                ");
+                $sth-> execute();
+                $categories = $sth->fetchAll(PDO::FETCH_ASSOC);
+               
+            }
+            catch(PDOException $e){
+                echo "Erreur : " . $e->getMessage();
+            }
+        ?>
 
 <div class="contener-categorie">
                 <?php
