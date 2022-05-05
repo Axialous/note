@@ -1,5 +1,20 @@
+
+
 <div class="contener-categorie">
-    <div class="corde-frotté instru">
+                <?php
+                foreach($categories as $categorie){
+                    ?>
+                <div class="<?php echo utf8_encode ($categorie['Nom']) ?> instru">
+                <p><?php echo utf8_encode ($categorie['Nom'])?></p>
+                        <img src="picture/<?php echo $categorie['Photo'];?>" alt="Image <?php echo utf8_encode ($categorie['Nom']) ?>">
+
+                           
+                </div>
+                <?php
+                }
+                ?>
+</div> 
+    <!-- <div class="corde-frotté instru">
     <p>Corde frottées</p>
     <img src="picture/instruments-cordes-frottees.jpg" alt="instruments-cordes-frottees">
     </div>
@@ -31,4 +46,4 @@
         <p>Accessoire</p>
     <img src="picture\instruments-percussion-accessoire.jpg" alt="percussion-accessoire">
     </div>
-</div>
+</div> -->
