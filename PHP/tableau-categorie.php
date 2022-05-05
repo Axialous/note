@@ -4,7 +4,7 @@
                 $dbco = new PDO("mysql:host=$servname;dbname=$dbname", $user, $pass);
                 $dbco->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
                 $sth = $dbco->prepare("
-                SELECT ID,Nom,Photo
+                SELECT ID,Categorie,Photo
                 FROM categories
                 
                 ");
@@ -21,9 +21,9 @@
                 <?php
                 foreach($categories as $categorie){
                     ?>
-                <div class="<?php echo utf8_encode ($categorie['Nom']) ?> instru">
-                <p><?php echo utf8_encode ($categorie['Nom'])?></p>
-                        <img src="picture/<?php echo $categorie['Photo'];?>" alt="Image <?php echo utf8_encode ($categorie['Nom']) ?>">
+                <div class="<?php echo utf8_encode ($categorie['Categorie']) ?> instru">
+                <p><?php echo utf8_encode ($categorie['Categorie'])?></p>
+                        <img src="picture/<?php echo $categorie['Photo'];?>" alt="Image <?php echo utf8_encode ($categorie['Categorie']) ?>">
 
                            
                 </div>

@@ -13,7 +13,4 @@
         <p>de musique</p>
     </div>
     <img src="picture/fond-presentation-index.jpg" alt="photo de salle de concert">
-    <button id='b1' class="bouton" value="Submit">
-        <span>s'identifier</span>
-    </button>
 </div>
