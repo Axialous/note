@@ -39,20 +39,36 @@ header nav {
     overflow: hidden;
 }
 
-header nav > input {
-    background: url(../images/icones/menu.svg);
-    background-size: contain;
+header nav > button {
+    background: url(../images/icones/compte.svg) center no-repeat;
+    background-size: 40px;
 
-    height: 40px;
-    width: 40px;
-
-    transition: 250ms;
+    height: 53px;
+    width: 53px;
 
     cursor: pointer;
+
+    transition: 125ms;
+}
+
+header nav > button:hover {
+    transform: scale(111%);
+}
+
+header nav > input {
+    background: url(../images/icones/menu.svg) center no-repeat;
+    background-size: 40px;
+
+    height: 53px;
+    width: 53px;
+
+    cursor: pointer;
+
+    transition: 125ms;
 }
 
 header nav > input:hover {
-    transform: scale(125%);
+    transform: scale(111%);
 }
 
 header nav > input:checked {
@@ -60,7 +76,7 @@ header nav > input:checked {
 }
 
 header nav > input:hover:checked {
-    transform: scale(125%) rotate(45deg);
+    transform: scale(111%) rotate(45deg);
 }
 
 header nav > input + div {
@@ -83,13 +99,13 @@ header nav > input + div {
 }
 
 header nav > input:checked + div {
-    top: 153px;
+    top: 157px;
 
     padding: 20px 3.5% 3.5vw;
 
     overflow-y: auto;
 
-    height: calc(100vh - 153px);
+    height: calc(100vh - 157px);
 }
 
 #menu-filtre h1 {
@@ -295,4 +311,6 @@ header form button {
 
     height: 100%;
     width: 45px;
+
+    cursor: pointer;
 }

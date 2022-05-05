@@ -10,6 +10,7 @@
         <link rel="stylesheet" href="style/presentation.css">
         <link rel="stylesheet" href="style/tableau-categorie.css">
         <link rel="stylesheet" href="style/footer.css">
+        <script src='java\filtre.js' async></script>
         <script src='java\presentation.js' async></script>
         <script src="https://kit.fontawesome.com/29ac4cabe1.js"></script>
     </head>
