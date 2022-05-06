@@ -37,7 +37,7 @@ function afficher(donnees) {
         //     alert(clef + ' : ' + instrument[clef])
         // }
         let duree = Math.floor(Math.random() * 1000);
-        document.getElementById('bloc-grille').innerHTML += `<a href="page-produit?ID=${instrument.ID}">
+        document.getElementById('bloc-grille').innerHTML += `<a href="page-produit.php?ID=${instrument.ID}">
                                                                  <figure style="background-image: url(picture/${instrument.Image}); animation: attente ${duree}ms, fondue 3000ms ${duree}ms;">
                                                                      <figcaption><p>${instrument.Nom}</p></figcaption>
                                                                  </figure>
