@@ -33,3 +33,25 @@
     font-family: 'GreatVibes';
     src: url('../fonts/GreatVibes-Regular.ttf');
 }
+
+@keyframes attente {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 0;
+    }
+}
+
+@keyframes fondue {
+    from {
+        opacity: 0;
+        filter: grayscale(100%);
+    }
+    33.33% {
+        opacity: 1;
+    }
+    to {
+        filter: grayscale(0%);
+    }
+}

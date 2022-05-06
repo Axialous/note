@@ -34,9 +34,10 @@ if (count($filtres) > 0) {
         $AND_necessaire = TRUE;
     }
 }
-$requete = "SELECT Nom, Image
+$requete = "SELECT ID, Nom, Image
             FROM produits
-            INNER JOIN categories ON produits.ID_Categorie = categories.ID" . $conditions;
+            INNER JOIN categories ON produits.ID_Categorie = categories.ID_Categorie" . $conditions . "
+            ORDER BY Nom";
 
 // Requête SQL :
 $donnees_produits = $BDD->prepare($requete);

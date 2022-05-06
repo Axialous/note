@@ -4,7 +4,7 @@
                 $dbco = new PDO("mysql:host=$servname;dbname=$dbname", $user, $pass);
                 $dbco->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
                 $sth = $dbco->prepare("
-                SELECT ID,Categorie,Photo
+                SELECT ID_Categorie,Categorie,Photo
                 FROM categories
                 
                 ");

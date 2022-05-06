@@ -3,7 +3,7 @@
         <img src="images/logo.svg" alt="logo" height="53">
         <nav>
             <button id="b1"></button>
-            <input type="checkbox">
+            <input type="checkbox" id="bouton-menu-filtre">
             <div id="menu-filtre">
                 <h1>Filtrez votre recherche :</h1>
                 <ul>
