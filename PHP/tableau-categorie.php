@@ -22,7 +22,7 @@
                 foreach($categories as $categorie){
                     ?>
                 <div class="<?php echo utf8_encode ($categorie['Categorie']) ?> instru">
-                <p><?php echo utf8_encode ($categorie['Categorie'])?></p>
+                <a href="page-categorie.php?ID=<?php echo $categorie['ID']?>" title="<?php echo utf8_encode ($categorie['Categorie']) ?>"> <?php echo utf8_encode ($categorie['Categorie'])?></a>
                         <img src="picture/<?php echo $categorie['Photo'];?>" alt="Image <?php echo utf8_encode ($categorie['Categorie']) ?>">
 
                            

@@ -1,6 +1,6 @@
 <header>
     <div>
-        <img src="images/logo.svg" alt="logo" height="53">
+        <a href="index.php"><img src="images/logo.svg" alt="logo" height="53"></a>
         <nav>
             <button id="b1"></button>
             <input type="checkbox" id="bouton-menu-filtre">
