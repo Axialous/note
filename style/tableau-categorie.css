@@ -48,12 +48,12 @@
   .instru:hover::after {
     transform: translateX(-50%) scaleX(0.8);
   }
-.instru p{
+.instru a{
     position: absolute;
     width: 70%;
     top: 100px;
     left: 20%;
-
+cursor: pointer;
     font-size: 500%;
     color: #FFF;
     font-family:'GreatVibes';  
