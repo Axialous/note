@@ -16,6 +16,10 @@
     margin: 0;
 }
 
+body {
+    background-color: hsl(354, 72%, 39%);
+}
+
 @font-face {
     font-family: 'Nunito';
     src: url("../fonts/Nunito-Regular.ttf");
@@ -32,6 +36,42 @@
 @font-face {
     font-family: 'GreatVibes';
     src: url('../fonts/GreatVibes-Regular.ttf');
+}
+
+@keyframes tremblement {
+    from {
+        transform: rotate(0deg);
+    }
+    10% {
+        transform: rotate(-5deg);
+    }
+    20% {
+        transform: rotate(4deg);
+    }
+    30% {
+        transform: rotate(-4deg);
+    }
+    40% {
+        transform: rotate(3deg);
+    }
+    50% {
+        transform: rotate(-3deg);
+    }
+    60% {
+        transform: rotate(2deg);
+    }
+    70% {
+        transform: rotate(-2deg);
+    }
+    80% {
+        transform: rotate(1deg);
+    }
+    90% {
+        transform: rotate(-1deg);
+    }
+    to  {
+        transform: rotate(0deg);
+    }
 }
 
 @keyframes attente {

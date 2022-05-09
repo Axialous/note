@@ -6,9 +6,10 @@
 }
 
 #tableau-categories {
-    transition: 1250ms;
     top: 0;
     left: 0;
+
+    transition: 1250ms;
 }
 
 #grille {
@@ -35,6 +36,7 @@
 
     width: min(100%, 1300px);
 }
+
 #grille a {
     flex: none;
 
@@ -79,7 +81,7 @@
     font-family: 'Nunito', sans-serif;
     font-size: 25px;
     color: hsl(13, 50%, 95%);
-    text-shadow: 0 0 15px hsl(13, 46%, 22%);
+    text-shadow: 0 0 15px hsl(24, 8%, 13%);
 
     padding: 15px;
 }

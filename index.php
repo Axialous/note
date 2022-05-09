@@ -28,11 +28,9 @@
                 </section>
               
                 <div id="contenu">
-                    <section id="tableau-categories">
                     <?php
                     include 'PHP/tableau-categorie.php';
-                    ?>   
-                    </section>
+                    ?>
 
                     <?php
                     include 'PHP/grille.php';
