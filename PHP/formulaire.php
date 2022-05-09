@@ -1,4 +1,5 @@
 <?php
+session_start();
             $servername = 'localhost';
             $username = 'root';
             $password = "";
@@ -9,21 +10,20 @@
                 $conn = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
                 $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
             
+                $sth = $conn->prepare("
+                SELECT *
+                FROM user
+                WHERE Email= '$name' 
+                ");
+              $sth-> execute();
+              $user = $sth->fetchAll(PDO::FETCH_ASSOC);
 
-    if ($name !=="" && $pass!=="")
-    {$sth = $conn->prepare("
-        SELECT *
-        FROM user
-        WHERE Email= '$name' and Password ='".hash('sha256',$pass)."'  
-        ");
-      $sth-> execute();
-      $user = $sth->fetchAll(PDO::FETCH_ASSOC);
+    if ($pass == $user[0]['Password'])
      {
                 $_SESSION['Email'] = $name;
         //    header ("Location:identification.php");
            echo "connexion reussi";
                 
-                }
                                     }
 
              else {
