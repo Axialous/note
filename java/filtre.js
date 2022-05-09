@@ -2,11 +2,13 @@ filtres = {}
 
 function definir(filtre, valeur) {
     filtres[filtre] = valeur;
+    document.getElementById('bouton-menu-filtre').checked = false;
     actualiser();
 }
 
 function retirer(filtre) {
     delete filtres[filtre];
+    document.getElementById('bouton-menu-filtre').checked = false;
     actualiser();
 }
 
@@ -28,14 +30,9 @@ async function actualiser() {
 }
 
 function afficher(donnees) {
-    document.getElementById('bouton-menu-filtre').checked = false;
-
     // Construction de la grille de produits :
     document.getElementById('bloc-grille').innerHTML = '';
     for (let instrument of donnees) {
-        // for (let clef in instrument) {
-        //     alert(clef + ' : ' + instrument[clef])
-        // }
         let duree = Math.floor(Math.random() * 1000);
         document.getElementById('bloc-grille').innerHTML += `<a href="page-produit.php?ID=${instrument.ID}">
                                                                  <figure style="background-image: url(picture/${instrument.Image}); animation: attente ${duree}ms, fondue 3000ms ${duree}ms;">

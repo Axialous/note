@@ -213,7 +213,7 @@ header nav > input:checked + div {
 }
 
 #menu-filtre label:hover, #menu-filtre input:hover + div input:checked + label {
-    border-radius: 20px;
+    animation: tremblement 500ms;
 }
 
 #menu-filtre input:checked + label {
