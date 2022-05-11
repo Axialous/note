@@ -5,12 +5,14 @@ session_start();
 // Connexion à la base de données :
 try {
     $BDD = new PDO('mysql:host=localhost;dbname=note;charset=utf8', 'root', '');
+    $BDD->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 }
-catch (Exeption $e) {
+catch (PDOException $e) {
     die ('Erreur : ' . $e->getMessage());
 }
 
 // Exécution de la requête chargeant la liste des instruments en fonction du rôle de l'utilisateur :
+print_r($_SESSION);
 if ($_SESSION['Role'] == 'admin') {
     $donnees_instruments = $BDD->prepare("SELECT *
                                           FROM produits");
@@ -36,10 +38,63 @@ $categories = $donnees_categories->fetchAll();
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
     </head>
     <body>
         <main>
             <section>
+                <article>
+                    <form action="PHP/ajouter_instrument.php" method="post" enctype="multipart/form-data">
+                        <h1>Nouvel instrument : </h1>
+                        <div>
+                            <label for="nom_instrument_<?= $instrument['ID'] ?>">Nom : </label>
+                            <input id="nom_instrument_<?= $instrument['ID'] ?>"
+                                type="text"
+                                name="Nom">
+                        </div>
+                        <div>
+                            <label for="description_instrument_<?= $instrument['ID'] ?>">Description : </label>
+                            <textarea id="description_instrument_<?= $instrument['ID'] ?>"
+                                    name="Description"></textarea>
+                        </div>
+                        <div>
+                            <label for="image_instrument_<?= $instrument['ID'] ?>">Image : </label>
+                            <input id="image_instrument_<?= $instrument['ID'] ?>"
+                                type="file"
+                                name="Image"
+                                accept=".jpg, .jpeg">
+                        </div>
+                        <div>
+                            <label for="categorie_instrument_<?= $instrument['ID'] ?>">Catégorie : </label>
+                            <select id="categorie_instrument_<?= $instrument['ID'] ?>"
+                                    name="Categorie">
+                                <?php
+                                foreach ($categories as $categorie) {
+                                ?>
+                                    <option value="<?= $categorie['ID_Categorie'] ?>"><?= $categorie['Titre'] ?></option>
+                                <?php
+                                }
+                                ?>
+                            </select>
+                        </div>
+                        <div>
+                            <label for="taille_instrument_<?= $instrument['ID'] ?>">Taille : </label>
+                            <input id="taille_instrument_<?= $instrument['ID'] ?>"
+                                type="number"
+                                name="Taille"
+                                min="1"
+                                max="5">
+                        </div>
+                        <div>
+                            <label for="formations_instrument_<?= $instrument['ID'] ?>">Formations : </label>
+                            <textarea id="formations_instrument_<?= $instrument['ID'] ?>"
+                                      name="Formations"></textarea>
+                        </div>
+                        <div>
+                            <button type="submit">Ajouter</button>
+                        </div>
+                    </form>
+                </article>
 
             <?php
 
@@ -47,7 +102,7 @@ $categories = $donnees_categories->fetchAll();
             foreach ($instruments as $instrument) {
             ?>
                 <article>
-                    <form action="PHP/modifier_instrument.PHP" method="post">
+                    <form action="PHP/modifier_instrument.php" method="post" enctype="multipart/form-data">
                         <h1>Instrument <?= $instrument['ID'] ?> : </h1>
                         <input type="hidden"
                                name="ID"
@@ -57,7 +112,7 @@ $categories = $donnees_categories->fetchAll();
                             <input id="nom_instrument_<?= $instrument['ID'] ?>"
                                    type="text"
                                    name="Nom"
-                                   value="<?= $instrument['nom'] ?>">
+                                   value="<?= $instrument['Nom'] ?>">
                         </div>
                         <div>
                             <label for="description_instrument_<?= $instrument['ID'] ?>">Description : </label>
@@ -65,12 +120,12 @@ $categories = $donnees_categories->fetchAll();
                                       name="Description"><?= $instrument['Description'] ?></textarea>
                         </div>
                         <div>
-                            <label for="image_instrument_<?= $instrument['ID'] ?>">Nom : </label>
+                            <label for="image_instrument_<?= $instrument['ID'] ?>">Image : </label>
                             <input id="image_instrument_<?= $instrument['ID'] ?>"
                                    type="file"
                                    name="Image"
                                    accept=".jpg, .jpeg"
-                                   value="<?= $instrument['image'] ?>">
+                                   value="<?= $instrument['Image'] ?>">
                         </div>
                         <div>
                             <label for="categorie_instrument_<?= $instrument['ID'] ?>">Catégorie : </label>
@@ -92,7 +147,7 @@ $categories = $donnees_categories->fetchAll();
                                    name="Taille"
                                    min="1"
                                    max="5"
-                                   value="<?= $instrument['nom'] ?>">
+                                   value="<?= $instrument['Taille'] ?>">
                         </div>
                         <div>
                             <label for="formations_instrument_<?= $instrument['ID'] ?>">Formations : </label>
