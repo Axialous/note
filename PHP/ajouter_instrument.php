@@ -23,7 +23,7 @@ $categorie = $categories[0]['Categorie'];
 function verification($donnees) {
     $donnees = trim($donnees);
     $donnees = stripslashes($donnees);
-    $donnees = htmlspecialchars($donnees);Travail sur 
+    $donnees = htmlspecialchars($donnees);
     return $donnees;
 }
 
@@ -32,9 +32,18 @@ $description = verification($_POST['Description']);
 $image = $categorie . "/" . $_FILES['Image']['name'] ;
 $id_categorie = verification($_POST['Categorie']);
 $taille = verification($_POST['Taille']);
-$formations = verification($_POST['Formations']);
+$formations = "";
+print_r($_POST);
+foreach ($_POST['Formations'] as $formation) {
+    if (strlen($formations) > 0) {
+        $formations .= ';';
+    }
+    $formations .= verification($formation);
+}
 
 // Insertion des données :
+move_uploaded_file($_FILES['Image']['tmp_name'], "../picture/" . $image);
+
 $ajout = $BDD->prepare("INSERT INTO produits(ID, Nom, Description, Image, ID_categorie, Taille, Formations, ID_user)
                         VALUES (NULL, :nom, :description, :image, :id_categorie, :taille, :formations, :id_user)");
 $ajout->bindParam(':nom', $nom);

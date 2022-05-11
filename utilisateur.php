@@ -29,6 +29,12 @@ $donnees_categories = $BDD->prepare("SELECT ID_Categorie, Titre
                                      FROM categories");
 $donnees_categories->execute();
 $categories = $donnees_categories->fetchAll();
+
+// Exécution de la requête chargeant la liste des formations :
+$donnees_formations = $BDD->prepare("SELECT Titre, Formation
+                                     FROM formations");
+$donnees_formations->execute();
+$formations = $donnees_formations->fetchAll();
 ?>
 
 <!DOCTYPE html>
@@ -87,8 +93,18 @@ $categories = $donnees_categories->fetchAll();
                         </div>
                         <div>
                             <label for="formations_instrument_<?= $instrument['ID'] ?>">Formations : </label>
-                            <textarea id="formations_instrument_<?= $instrument['ID'] ?>"
-                                      name="Formations"></textarea>
+                            <select id="formations_instrument_<?= $instrument['ID'] ?>"
+                                    name="Formations[]"
+                                    multiple
+                                    size="6">
+                                <?php
+                                foreach ($formations as $formation) {
+                                ?>
+                                    <option value="<?= $formation['Formation'] ?>"><?= $formation['Titre'] ?></option>
+                                <?php
+                                }
+                                ?>
+                            </select>
                         </div>
                         <div>
                             <button type="submit">Ajouter</button>
@@ -119,22 +135,25 @@ $categories = $donnees_categories->fetchAll();
                             <textarea id="description_instrument_<?= $instrument['ID'] ?>"
                                       name="Description"><?= $instrument['Description'] ?></textarea>
                         </div>
+                        <input type="hidden"
+                               name="Ancienne_Image"
+                               value="<?= $instrument['Image'] ?>">
                         <div>
                             <label for="image_instrument_<?= $instrument['ID'] ?>">Image : </label>
                             <input id="image_instrument_<?= $instrument['ID'] ?>"
                                    type="file"
                                    name="Image"
                                    accept=".jpg, .jpeg"
-                                   value="<?= $instrument['Image'] ?>">
+                                   value="picture/<?= $instrument['Image'] ?>">
                         </div>
                         <div>
                             <label for="categorie_instrument_<?= $instrument['ID'] ?>">Catégorie : </label>
                             <select id="categorie_instrument_<?= $instrument['ID'] ?>"
-                                    name="categorie">
+                                    name="Categorie">
                                 <?php
                                 foreach ($categories as $categorie) {
                                 ?>
-                                    <option value="<?= $categorie['ID_Categorie'] ?>" <?= ($categorie['ID_Categorie'] == $instrument['ID_categorie']) ? 'selected' : ''; ?>><?= $categorie['Titre'] ?></option>
+                                    <option value="<?= $categorie['ID_Categorie'] ?>" <?= ($categorie['ID_Categorie'] == $instrument['ID_categorie']) ? 'selected' : '' ?>><?= $categorie['Titre'] ?></option>
                                 <?php
                                 }
                                 ?>
@@ -151,8 +170,18 @@ $categories = $donnees_categories->fetchAll();
                         </div>
                         <div>
                             <label for="formations_instrument_<?= $instrument['ID'] ?>">Formations : </label>
-                            <textarea id="formations_instrument_<?= $instrument['ID'] ?>"
-                                      name="Formations"><?= $instrument['Formations'] ?></textarea>
+                            <select id="formations_instrument_<?= $instrument['ID'] ?>"
+                                    name="Formations[]"
+                                    multiple
+                                    size="6">
+                                <?php
+                                foreach ($formations as $formation) {
+                                ?>
+                                    <option value="<?= $formation['Formation'] ?>" <?= (strpos($instrument['Formations'], $formation['Formation']) !== false) ? 'selected' : '' ?>><?= $formation['Titre'] ?></option>
+                                <?php
+                                }
+                                ?>
+                            </select>
                         </div>
                         <div>
                             <button type="submit">Modifier</button>
