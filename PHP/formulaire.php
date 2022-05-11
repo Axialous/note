@@ -21,7 +21,9 @@ session_start();
     if ($pass == $user[0]['Password'])
      {
                 $_SESSION['Email'] = $name;
-        //    header ("Location:identification.php");
+                $_SESSION['Role'] = $user[0]['Role'];
+                $_SESSION['ID_Utilisateur'] = $user[0]['ID_Utilisateur'];
+           header ("Location:../utilisateur.php");
            echo "connexion reussi";
                 
                                     }
