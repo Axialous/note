@@ -35,6 +35,7 @@ $donnees_formations = $BDD->prepare("SELECT Titre, Formation
                                      FROM formations");
 $donnees_formations->execute();
 $formations = $donnees_formations->fetchAll();
+print_r($_SESSION);
 ?>
 
 <!DOCTYPE html>
@@ -52,7 +53,7 @@ $formations = $donnees_formations->fetchAll();
             <section class="container-fluid ">
                 <article class="mx-auto col-6 py-2">
                     <form  action="PHP/ajouter_instrument.php" method="post" enctype="multipart/form-data">
-                        <h1 class="display-5 fw-bold">Ajouter un nouvel instrument: </h1>
+                        <h1 class="display-5 fw-bold">Ajouter un nouvel instrument : </h1>
                         <div class="form-floating mb-3">
                             <label for="nom_instrument_<?= $instrument['ID'] ?>">Nom : </label>
                             <input class="form-control rounded-4" id="nom_instrument_<?= $instrument['ID'] ?>"

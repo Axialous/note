@@ -12,7 +12,7 @@ session_start();
             
                 $sth = $conn->prepare("
                 SELECT *
-                FROM users
+                FROM user
                 WHERE Email = '$Email'
                 ");
                 $sth->bindParam('Email',$Email);

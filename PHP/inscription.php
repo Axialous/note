@@ -36,8 +36,8 @@
                             <div class="invalid-feedback">Veuillez entrer un mot de passe valide</div>
                         </div>
                         <div class="form-floating mb-3">
-                            <label for="roles">Roles</label>
-                            <input class="form-control rounded-4" name="Roles" type="type" placeholder="admin/visiteur..." required  maxlenght="8">
+                            <label for="role">Role</label>
+                            <input class="form-control rounded-4" name="Role" type="type" placeholder="admin/visiteur..." required  maxlenght="8">
                             <div class="invalid-feedback">Veuillez entrer votre role</div>
                         </div>
                     <div class="form-check">
