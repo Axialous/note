@@ -23,7 +23,7 @@ $categorie = $categories[0]['Categorie'];
 function verification($donnees) {
     $donnees = trim($donnees);
     $donnees = stripslashes($donnees);
-    $donnees = htmlspecialchars($donnees);Travail sur 
+    $donnees = htmlspecialchars($donnees);
     return $donnees;
 }
 

@@ -12,7 +12,7 @@ catch (PDOException $e) {
 }
 
 // Exécution de la requête chargeant la liste des instruments en fonction du rôle de l'utilisateur :
-print_r($_SESSION);
+
 if ($_SESSION['Role'] == 'admin') {
     $donnees_instruments = $BDD->prepare("SELECT *
                                           FROM produits");
@@ -39,34 +39,35 @@ $categories = $donnees_categories->fetchAll();
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+        <link rel="stylesheet" href="utilisateur.php">
     </head>
     <body>
         <main>
-            <section>
-                <article>
-                    <form action="PHP/ajouter_instrument.php" method="post" enctype="multipart/form-data">
-                        <h1>Nouvel instrument : </h1>
-                        <div>
+            <section class="container-fluid ">
+                <article class="mx-auto col-6 py-2">
+                    <form  action="PHP/ajouter_instrument.php" method="post" enctype="multipart/form-data">
+                        <h1 class="display-5 fw-bold">Ajouter un nouvel instrument: </h1>
+                        <div class="form-floating mb-3">
                             <label for="nom_instrument_<?= $instrument['ID'] ?>">Nom : </label>
-                            <input id="nom_instrument_<?= $instrument['ID'] ?>"
+                            <input class="form-control rounded-4" id="nom_instrument_<?= $instrument['ID'] ?>"
                                 type="text"
                                 name="Nom">
                         </div>
-                        <div>
+                        <div class="form-floating mb-3" >
                             <label for="description_instrument_<?= $instrument['ID'] ?>">Description : </label>
-                            <textarea id="description_instrument_<?= $instrument['ID'] ?>"
+                            <textarea class="form-control rounded-4" id="description_instrument_<?= $instrument['ID'] ?>"
                                     name="Description"></textarea>
                         </div>
-                        <div>
+                        <div >
                             <label for="image_instrument_<?= $instrument['ID'] ?>">Image : </label>
-                            <input id="image_instrument_<?= $instrument['ID'] ?>"
+                            <input class="form-control rounded-4 mb-3" id="image_instrument_<?= $instrument['ID'] ?>"
                                 type="file"
                                 name="Image"
                                 accept=".jpg, .jpeg">
                         </div>
-                        <div>
+                        <div >
                             <label for="categorie_instrument_<?= $instrument['ID'] ?>">Catégorie : </label>
-                            <select id="categorie_instrument_<?= $instrument['ID'] ?>"
+                            <select class="form-control rounded-4 mb-3" id="categorie_instrument_<?= $instrument['ID'] ?>"
                                     name="Categorie">
                                 <?php
                                 foreach ($categories as $categorie) {
@@ -77,59 +78,63 @@ $categories = $donnees_categories->fetchAll();
                                 ?>
                             </select>
                         </div>
-                        <div>
+                        <div class="form-floating mb-3">
                             <label for="taille_instrument_<?= $instrument['ID'] ?>">Taille : </label>
-                            <input id="taille_instrument_<?= $instrument['ID'] ?>"
+                            <input class="form-control rounded-4"id="taille_instrument_<?= $instrument['ID'] ?>"
                                 type="number"
                                 name="Taille"
                                 min="1"
                                 max="5">
                         </div>
-                        <div>
+                        <div class="form-floating mb-3">
                             <label for="formations_instrument_<?= $instrument['ID'] ?>">Formations : </label>
-                            <textarea id="formations_instrument_<?= $instrument['ID'] ?>"
+                            <textarea  class="form-control rounded-4"id="formations_instrument_<?= $instrument['ID'] ?>"
                                       name="Formations"></textarea>
                         </div>
-                        <div>
-                            <button type="submit">Ajouter</button>
+                        <div >
+                            <button class="btn btn-primary col-5 " type="submit">Ajouter</button>
                         </div>
                     </form>
                 </article>
+                            </section>
 
-            <?php
+            
+            <section class="container-fluid row">
+                
+                <?php
 
-            // Affichage de la liste des instruments avec boutons "modifer" et "supprimer" :
-            foreach ($instruments as $instrument) {
-            ?>
-                <article>
-                    <form action="PHP/modifier_instrument.php" method="post" enctype="multipart/form-data">
-                        <h1>Instrument <?= $instrument['ID'] ?> : </h1>
-                        <input type="hidden"
+// Affichage de la liste des instruments avec boutons "modifer" et "supprimer" :
+foreach ($instruments as $instrument) {
+?>
+                    <article class="col-4 py-4">
+                    <form  action="PHP/modifier_instrument.php" method="post" enctype="multipart/form-data">
+                        <h1><?= $instrument['Nom'] ?> </h1>
+                        <input class="form-control rounded-4" type="hidden"
                                name="ID"
                                value="<?= $instrument['ID'] ?>">
-                        <div>
-                            <label for="nom_instrument_<?= $instrument['ID'] ?>">Nom : </label>
-                            <input id="nom_instrument_<?= $instrument['ID'] ?>"
+                        <div class="form-floating mb-3">
+                            <label  for="nom_instrument_<?= $instrument['ID'] ?>">Nom: </label>
+                            <input class="form-control rounded-4 " id="nom_instrument_<?= $instrument['ID'] ?>"
                                    type="text"
                                    name="Nom"
                                    value="<?= $instrument['Nom'] ?>">
                         </div>
-                        <div>
-                            <label for="description_instrument_<?= $instrument['ID'] ?>">Description : </label>
-                            <textarea id="description_instrument_<?= $instrument['ID'] ?>"
+                        <div class="form-floating mb-3">
+                            <label for="description_instrument_<?= $instrument['ID'] ?>">Description: </label>
+                            <textarea class="form-control rounded-4"id="description_instrument_<?= $instrument['ID'] ?>"
                                       name="Description"><?= $instrument['Description'] ?></textarea>
                         </div>
-                        <div>
+                        <div class="form-floating mb-3">
                             <label for="image_instrument_<?= $instrument['ID'] ?>">Image : </label>
-                            <input id="image_instrument_<?= $instrument['ID'] ?>"
+                            <input class="form-control rounded-4" id="image_instrument_<?= $instrument['ID'] ?>"
                                    type="file"
                                    name="Image"
                                    accept=".jpg, .jpeg"
                                    value="<?= $instrument['Image'] ?>">
                         </div>
-                        <div>
+                        <div class="form-floating mb-3">
                             <label for="categorie_instrument_<?= $instrument['ID'] ?>">Catégorie : </label>
-                            <select id="categorie_instrument_<?= $instrument['ID'] ?>"
+                            <select class="form-control rounded-4" id="categorie_instrument_<?= $instrument['ID'] ?>"
                                     name="categorie">
                                 <?php
                                 foreach ($categories as $categorie) {
@@ -140,23 +145,23 @@ $categories = $donnees_categories->fetchAll();
                                 ?>
                             </select>
                         </div>
-                        <div>
+                        <div class="form-floating mb-3">
                             <label for="taille_instrument_<?= $instrument['ID'] ?>">Taille : </label>
-                            <input id="taille_instrument_<?= $instrument['ID'] ?>"
+                            <input class="form-control rounded-4" id="taille_instrument_<?= $instrument['ID'] ?>"
                                    type="number"
                                    name="Taille"
                                    min="1"
                                    max="5"
                                    value="<?= $instrument['Taille'] ?>">
                         </div>
-                        <div>
+                        <div class="form-floating mb-3">
                             <label for="formations_instrument_<?= $instrument['ID'] ?>">Formations : </label>
-                            <textarea id="formations_instrument_<?= $instrument['ID'] ?>"
+                            <textarea  class="form-control rounded-4"id="formations_instrument_<?= $instrument['ID'] ?>"
                                       name="Formations"><?= $instrument['Formations'] ?></textarea>
                         </div>
-                        <div>
-                            <button type="submit">Modifier</button>
-                            <button type="submit" formaction="PHP/supprimer_instrument.php">Supprimer</button>
+                        <div class="form-floating">
+                            <button class="btn btn-success col-5 mx-auto" type="submit">Modifier</button>
+                            <button class="btn btn-danger col-5 mx-auto" type="submit" formaction="PHP/supprimer_instrument.php">Supprimer</button>
                         </div>
                     </form>
                 </article>
