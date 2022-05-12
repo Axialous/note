@@ -4,34 +4,35 @@ session_start();
             $username = 'root';
             $password = "";
             $dbname = 'note';
-            $name= $_POST['Email'];
-            $pass= $_POST['Password'];
+            $Email= $_POST['Email'];
+            $Password= $_POST['Password'];
             
-                $conn = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
+                $conn = new PDO("mysql:host=$servername;dbname=$dbname;charset=utf8", $username, $password);
                 $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
             
                 $sth = $conn->prepare("
                 SELECT *
-                FROM user
-                WHERE Email= '$name' 
+                FROM users
+                WHERE Email = '$Email'
                 ");
-              $sth-> execute();
-              $user = $sth->fetchAll(PDO::FETCH_ASSOC);
+                $sth->bindParam('Email',$Email);
+                $sth-> execute();
+                $result = $sth->fetchAll(PDO::FETCH_ASSOC);
 
-    if ($pass == $user[0]['Password'])
-     {
-                $_SESSION['Email'] = $name;
-                $_SESSION['Role'] = $user[0]['Role'];
-                $_SESSION['ID_Utilisateur'] = $user[0]['ID_Utilisateur'];
-           header ("Location:../utilisateur.php");
-           echo "connexion reussi";
+               var_dump($result);
+
+    if ($result){
+     $passwordHash = $result[0]["Password"];
+       if (password_verify($Password, $passwordHash)){
+
+          header ("Location:../utilisateur.php");
+           echo "connexion reussi";}
+           else{ echo "identifiants invalides";}
                 
-                                    }
-
-             else {
-                $errorMessage = "identifiant ou mot de passe invalide"
-                ;
+      } else {
+                $errorMessage = "identifiant ou mot de passe invalide";
             }
+          
         
     
 
