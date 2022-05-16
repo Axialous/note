@@ -2,7 +2,8 @@
 
 #tableau-categories {
 
-    background: linear-gradient(180deg, hsl(13, 47%, 15%), 70%, hsl(354, 72%, 39%), hsl(353, 76%, 47%));
+    background-color: hsl(13, 50%, 95%);
+    background-image: url(../images/fond_instruments.svg);
 
     padding: 50px 3.5%;
 
@@ -24,9 +25,6 @@
 #tableau-categories figure {
     position: relative;
 
-    /* flex: none;
-    flex-grow: 1; */
-
     background-position: center;
     background-size: cover;
     border-radius: 3px;
@@ -43,7 +41,6 @@
 
 #tableau-categories figure:hover {
     box-shadow: 0 0 15px hsla(13, 50%, 95%, 0.125);
-    filter: blur(0);
 }
 
 #tableau-categories figcaption {
@@ -64,7 +61,14 @@
     text-align: center;
 
     padding: 15px;
+
+    transition: 250ms;
 }
+
+#tableau-categories figure:hover p {
+    font-size: 65px;
+}
+
 .tableau{
     transform: translateX(-100%);
     opacity: 0;
@@ -75,10 +79,3 @@
     transform: translateX(0%);
     opacity: 1;
 } 
-
-@media screen and (min-width: 1024px) {
-
-    #tableau-categories figure {
-        filter: blur(1px);
-    }
-}
