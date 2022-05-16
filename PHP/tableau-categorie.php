@@ -16,7 +16,7 @@
         ?>
 
 <section id="tableau-categories">
-    <div>
+    <div class="tableau">
 
     <?php
     foreach($categories as $categorie){
@@ -27,6 +27,5 @@
     <?php
     }
     ?>
-
     </div>
-</section> 
+</section>

@@ -34,7 +34,20 @@
         $sth->bindParam(':password',$Password);
         $sth->bindParam(':role',$Role);
         $sth->execute();
-    header("location:../utilisateur.php");
+
+        $donnees_result = $dbco->prepare("
+        SELECT *
+        FROM user
+        WHERE Email = '$Email'
+        ");
+        $donnees_result->bindParam('Email',$Email);
+        $donnees_result-> execute();
+        $result = $donnees_result->fetchAll(PDO::FETCH_ASSOC);
+
+        $_SESSION['Email']= $Email;
+        $_SESSION['Role']= $result[0]["Role"];
+        $_SESSION['ID_Utilisateur']= $result[0]["ID_Utilisateur"];
+        header("location:../utilisateur.php");
         //On renvoie l'utilisateur vers la page de remerciement <script type="text/javascript">alert('Votre message a bien était envoyé')</script>
     }
 

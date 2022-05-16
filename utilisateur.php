@@ -35,7 +35,7 @@ $donnees_formations = $BDD->prepare("SELECT Titre, Formation
                                      FROM formations");
 $donnees_formations->execute();
 $formations = $donnees_formations->fetchAll();
-print_r($_SESSION);
+// print_r($_SESSION);
 ?>
 
 <!DOCTYPE html>
@@ -48,31 +48,39 @@ print_r($_SESSION);
         <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
         <link rel="stylesheet" href="utilisateur.php">
     </head>
-    <body>
+    <body class="bg-light">
+        <header>
+        <a href="index.php"><img src="images/logo.svg" alt="logo" ></a>
+        <div >
+            <form action="PHP/deconnexion.php">
+                <button class="btn btn-danger col-3 offset-md-9 " type="submit">Déconnexion</button>
+            </form>
+        </div>
+        </header>
         <main>
             <section class="container-fluid ">
-                <article class="mx-auto col-6 py-2">
+                <article class="mx-auto col-6 py-2 mx-2 border border-dark rounded">
                     <form  action="PHP/ajouter_instrument.php" method="post" enctype="multipart/form-data">
-                        <h1 class="display-5 fw-bold">Ajouter un nouvel instrument : </h1>
-                        <div class="form-floating mb-3">
+                        <h1 class="display-5 fw-bold mx-4">Ajouter un nouvel instrument : </h1>
+                        <div class="form-floating mx-3">
                             <label for="nom_instrument_<?= $instrument['ID'] ?>">Nom : </label>
-                            <input class="form-control rounded-4" id="nom_instrument_<?= $instrument['ID'] ?>"
+                            <input class="form-control rounded-4 mb-3" id="nom_instrument_<?= $instrument['ID'] ?>"
                                 type="text"
                                 name="Nom">
                         </div>
-                        <div class="form-floating mb-3" >
+                        <div class=" mx-3" >
                             <label for="description_instrument_<?= $instrument['ID'] ?>">Description : </label>
                             <textarea class="form-control rounded-4" id="description_instrument_<?= $instrument['ID'] ?>"
                                     name="Description"></textarea>
                         </div>
-                        <div >
+                        <div  class="mx-3">
                             <label for="image_instrument_<?= $instrument['ID'] ?>">Image : </label>
                             <input class="form-control rounded-4 mb-3" id="image_instrument_<?= $instrument['ID'] ?>"
                                 type="file"
                                 name="Image"
                                 accept=".jpg, .jpeg">
                         </div>
-                        <div >
+                        <div class="mx-3">
                             <label for="categorie_instrument_<?= $instrument['ID'] ?>">Catégorie : </label>
                             <select class="form-control rounded-4 mb-3" id="categorie_instrument_<?= $instrument['ID'] ?>"
                                     name="Categorie">
@@ -85,7 +93,7 @@ print_r($_SESSION);
                                 ?>
                             </select>
                         </div>
-                        <div class="form-floating mb-3">
+                        <div class="form-floating mx-3">
                             <label for="taille_instrument_<?= $instrument['ID'] ?>">Taille : </label>
                             <input class="form-control rounded-4"id="taille_instrument_<?= $instrument['ID'] ?>"
                                 type="number"
@@ -93,9 +101,9 @@ print_r($_SESSION);
                                 min="1"
                                 max="5">
                         </div>
-                        <div class="form-floating mb-3">
+                        <div class="mx-3 ">
                             <label for="formations_instrument_<?= $instrument['ID'] ?>">Formations : </label>
-                            <select id="formations_instrument_<?= $instrument['ID'] ?>"
+                            <select class="form-control rounded-6 h-auto mb-3"id="formations_instrument_<?= $instrument['ID'] ?>"
                                     name="Formations[]"
                                     multiple
                                     size="6">
@@ -109,7 +117,7 @@ print_r($_SESSION);
                             </select>
                         </div>
                         <div >
-                            <button class="btn btn-primary col-5 " type="submit">Ajouter</button>
+                            <button class="btn btn-primary col-10 mx-5" type="submit">Ajouter</button>
                         </div>
                     </form>
                 </article>
@@ -123,13 +131,13 @@ print_r($_SESSION);
 // Affichage de la liste des instruments avec boutons "modifer" et "supprimer" :
 foreach ($instruments as $instrument) {
 ?>
-                    <article class="col-4 py-4">
+                    <article class="col-4 py-4 ">
                     <form  action="PHP/modifier_instrument.php" method="post" enctype="multipart/form-data">
-                        <h1><?= $instrument['Nom'] ?> </h1>
+                        <h1 class="display-5 fw-bold mx-4"><?= $instrument['Nom'] ?> </h1>
                         <input class="form-control rounded-4" type="hidden"
                                name="ID"
                                value="<?= $instrument['ID'] ?>">
-                        <div class="form-floating mb-3">
+                        <div class="form-floating mb-3 ">
                             <label  for="nom_instrument_<?= $instrument['ID'] ?>">Nom: </label>
                             <input class="form-control rounded-4 " id="nom_instrument_<?= $instrument['ID'] ?>"
                                    type="text"
@@ -174,9 +182,9 @@ foreach ($instruments as $instrument) {
                                    max="5"
                                    value="<?= $instrument['Taille'] ?>">
                         </div>
-                        <div class="form-floating mb-3">
+                        <div class=" mb-3">
                             <label for="formations_instrument_<?= $instrument['ID'] ?>">Formations : </label>
-                            <select id="formations_instrument_<?= $instrument['ID'] ?>"
+                            <select class="form-control rounded-6 h-auto"id="formations_instrument_<?= $instrument['ID'] ?>"
                                     name="Formations[]"
                                     multiple
                                     size="6">

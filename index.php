@@ -6,11 +6,15 @@
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
         <link rel="stylesheet" href="style/header.css">
         <link rel="stylesheet" href="style/presentation.css">
         <link rel="stylesheet" href="style/tableau-categorie.css">
         <link rel="stylesheet" href="style/grille.css">
         <link rel="stylesheet" href="style/footer.css">
+        <script src="https://unpkg.com/typewriter-effect@latest/dist/core.js"></script>
+        <script src="java/header.js" async></script>
+        <script src="java/tableau-categorie.js" async></script>
         <script src='java\filtre.js' async></script>
         <script src='java\presentation.js' async></script>
         <script src="https://kit.fontawesome.com/29ac4cabe1.js"></script>
