@@ -44,6 +44,8 @@
     width: min(100%, 300px);
 
     padding: 20px;
+
+    cursor: default;
 }
 
 #grille figure {

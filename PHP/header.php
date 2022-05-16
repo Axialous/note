@@ -50,7 +50,23 @@
     </div>
     <form>
         <label for="recherche"><img src="images/icones/loupe.svg" alt=""></label>
-        <input type="text" name="recherche" id="recherche">
-        <button type="submit"><img src="images/icones/suivant.svg" alt=""></button>
+        <input type="text" name="recherche" id="recherche" list="liste_filtres">
+        <datalist id="liste_filtres">
+            <option value="Cordes frottées"></option>
+            <option value="Cordes pincées"></option>
+            <option value="Cordes frappées"></option>
+            <option value="Bois"></option>
+            <option value="Cuivres"></option>
+            <option value="Percussions à clavier"></option>
+            <option value="Percussions à peaux"></option>
+            <option value="Accessoires"></option>
+            <option value="Fanfare"></option>
+            <option value="Big band"></option>
+            <option value="Harmonie"></option>
+            <option value="Groupe de rock"></option>
+            <option value="Orchestre de chambre"></option>
+            <option value="Orchestre symphonique"></option>
+        </datalist>
+        <button type="button" onclick="filtrer_recherche()"><img src="images/icones/suivant.svg" alt=""></button>
     </form>
 </header>
