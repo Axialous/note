@@ -4,8 +4,7 @@ header {
     position: sticky;
     top: 0;
 
-    background: linear-gradient(0deg, #51291E, 20%, #A91C2B);
-    box-shadow: 0 0 30px hsla(13, 50%, 95%, 0.25);
+    background: linear-gradient(0deg, hsl(354, 61%, 28%), 20%, hsl(354, 72%, 39%));
 
     height: 157px;
 

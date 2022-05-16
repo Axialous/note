@@ -20,6 +20,11 @@ body {
     background-color: hsl(354, 72%, 39%);
 }
 
+::selection {
+    background-color: hsla(261, 73%, 49%, 0.75);
+    color: hsla(0, 0%, 100%, 0.75);
+}
+
 @font-face {
     font-family: 'Nunito';
     src: url("../fonts/Nunito-Regular.ttf");
