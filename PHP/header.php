@@ -1,7 +1,8 @@
 <header>
     <div>
+    <a href="index.php">
     <h1 class="logo-anim"></h1>
-        <!-- <a href="index.php"><img src="images/logo.svg" alt="logo" height="53"></a> -->
+    </a>
         <nav>
         
             <button id="b1"></button>

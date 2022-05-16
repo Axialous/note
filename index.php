@@ -16,7 +16,8 @@
         <script src="java/header.js" async></script>
         <script src="java/tableau-categorie.js" async></script>
         <script src='java\filtre.js' async></script>
-        <script src='java\presentation.js' async></script>
+        <script src='java/identification.js' async></script>
+        <script src='java/presentation.js' async></script>
         <script src="https://kit.fontawesome.com/29ac4cabe1.js"></script>
     </head>
     <body>
