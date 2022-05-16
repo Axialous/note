@@ -39,7 +39,7 @@ if ($_FILES['Image']['name'] != "") {
 $id_categorie = verification($_POST['Categorie']);
 $taille = verification($_POST['Taille']);
 $formations = "";
-print_r($_POST);
+print_r($_FILES);
 foreach ($_POST['Formations'] as $formation) {
     if (strlen($formations) > 0) {
         $formations .= ';';
@@ -53,8 +53,10 @@ $nouvel_emplacement_image = $categorie . '/' . explode('/', $ancienne_image)[1];
 rename('../picture/' . $ancienne_image, '../picture/' . $nouvel_emplacement_image);
 $ancienne_image = $nouvel_emplacement_image;
 
-if ($ancienne_image != $image) {
+if ($_FILES['Image']['name'] != "") {
     move_uploaded_file($_FILES['Image']['tmp_name'], "../picture/" . $image);
+}
+if ($ancienne_image != $image) {
     @unlink("../picture/" . $ancienne_image);
 }
 $modification = $BDD->prepare("UPDATE produits
@@ -69,6 +71,6 @@ $modification->bindParam(':formations', $formations);
 $modification->bindParam(':id_user', $_SESSION['ID_Utilisateur']);
 $modification->execute();
 
-//header("Location:../utilisateur.php");
+header("Location:../utilisateur.php");
 
 ?>
