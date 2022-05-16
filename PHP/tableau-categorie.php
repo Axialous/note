@@ -16,19 +16,18 @@
         ?>
 
 <section id="tableau-categories">
-    <div>
+    <div class="tableau">
 
     <?php
     foreach($categories as $categorie){
     ?>
         <a href="page-categorie.php?ID=<?= $categorie['ID_Categorie'] ?>">
-            <figure style="background-image: url(picture/<?= $categorie['Photo']?>);">
+            <figure  style="background-image: url(picture/<?= $categorie['Photo']?>);">
                 <figcaption><p><?= ($categorie['Titre']) ?></p></figcaption>
             </figure>
         </a>
     <?php
     }
     ?>
-
     </div>
-</section> 
+</section>

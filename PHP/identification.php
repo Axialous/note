@@ -11,7 +11,7 @@
 </head>
 <body>
     <div class=container-general>
-        <form method="post" action="formulaire.php" >
+        <form method="post" action="formulaire.php" target="_blank">
             <div class="formulaire1 contact">
                 <label for="Email">Identifiant</label>
                 <input name="Email" type="text" placeholder="Identifiant" required  maxlenght="50">
