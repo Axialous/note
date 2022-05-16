@@ -1,4 +1,4 @@
-filtres = {}
+var filtres = {}
 
 function definir(filtre, valeur) {
     filtres[filtre] = valeur;
@@ -9,6 +9,56 @@ function definir(filtre, valeur) {
 function retirer(filtre) {
     delete filtres[filtre];
     document.getElementById('bouton-menu-filtre').checked = false;
+    actualiser();
+}
+
+function filtrer_recherche() {
+    recherche = document.getElementById('recherche');
+    switch (recherche.value) {
+        case 'Cordes frottées':
+            filtres.famille = 'cordes-frottees';
+            break;
+        case 'Cordes pincées':
+            filtres.famille = 'cordes-pincees';
+            break;
+        case 'Cordes frappées':
+            filtres.famille = 'cordes-frappees';
+            break;
+        case 'Bois':
+            filtres.famille = 'vents-bois';
+            break;
+        case 'Cuivres':
+            filtres.famille = 'vents-cuivres';
+            break;
+        case 'Percussions à claviers':
+            filtres.famille = 'percussions-claviers';
+            break;
+        case 'Percussions à peaux':
+            filtres.famille = 'percussions-peaux';
+            break;
+        case 'Accessoires':
+            filtres.famille = 'percussions-accessoires';
+            break;
+        case 'Fanfare':
+            filtres.formation = 'fanfare';
+            break;
+        case 'Big band':
+            filtres.formation = 'big-band';
+            break;
+        case 'Harmonie':
+            filtres.formation = 'harmonie';
+            break;
+        case 'Groupe de rock':
+            filtres.formation = 'groupe-de-rock';
+            break;
+        case 'Orchestre de chambre':
+            filtres.formation = 'orchestre-de-chambre';
+            break;
+        case 'Orchestre symphonique':
+            filtres.formation = 'orchestre-symphonique';
+            break;
+    }
+    recherche.value = "";
     actualiser();
 }
 

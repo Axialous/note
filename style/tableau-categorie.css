@@ -21,28 +21,23 @@
     width: min(100%, 1300px);
 }
 
-#tableau-categories a {
-    flex: none;
-    flex-grow: 1;
-
-    height: 380px;
-    width: min(100%, 465px);
-
-    padding: 20px;
-}
-
 #tableau-categories figure {
     position: relative;
+
+    /* flex: none;
+    flex-grow: 1; */
 
     background-position: center;
     background-size: cover;
     border-radius: 3px;
     
-    height: 100%;
-    width: 100%;
+    height: 380px;
+    width: min(100%, 555px);
+
+    margin: 20px;
+
 
     cursor: pointer;
-
     transition: filter 500ms, 750ms;
 }
 
