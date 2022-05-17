@@ -3,13 +3,12 @@ const slidingtableau = document.querySelector('.tableau');
 window.addEventListener('scroll', () => {
 // on lance une fonction scroll
     const {scrollTop, clientHeight} = document.documentElement;
-// On creer une constante a partir de l'objet document.documentelement 
+// On creé une constante a partir de l'objet document.documentelement 
 // scrolltop= scroll depuis le top et clientheight= hauteur parti visible de la fenetre
 
     const topElementToTopViewport = slidingtableau.getBoundingClientRect().top;
 
     console.log(topElementToTopViewport);
-
     if(scrollTop > (scrollTop + topElementToTopViewport).toFixed() - clientHeight * 0.8){
         slidingtableau.classList.add('active')
     }

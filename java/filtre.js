@@ -3,6 +3,7 @@ var filtres = {}
 function definir(filtre, valeur) {
     filtres[filtre] = valeur;
     document.getElementById('bouton-menu-filtre').checked = false;
+    document.querySelector(`#${filtre}-${valeur}`).checked = true;
     actualiser();
 }
 
@@ -16,50 +17,49 @@ function filtrer_recherche() {
     recherche = document.getElementById('recherche');
     switch (recherche.value) {
         case 'Cordes frottées':
-            filtres.famille = 'cordes-frottees';
+            definir('famille', 'cordes-frottees');
             break;
         case 'Cordes pincées':
-            filtres.famille = 'cordes-pincees';
+            definir('famille', 'cordes-pincees');
             break;
         case 'Cordes frappées':
-            filtres.famille = 'cordes-frappees';
+            definir('famille', 'cordes-frappees');
             break;
         case 'Bois':
-            filtres.famille = 'vents-bois';
+            definir('famille', 'vents-bois');
             break;
         case 'Cuivres':
-            filtres.famille = 'vents-cuivres';
+            definir('famille', 'vents-cuivres');
             break;
         case 'Percussions à claviers':
-            filtres.famille = 'percussions-claviers';
+            definir('famille', 'percussions-claviers');
             break;
         case 'Percussions à peaux':
-            filtres.famille = 'percussions-peaux';
+            definir('famille', 'percussions-peaux');
             break;
         case 'Accessoires':
-            filtres.famille = 'percussions-accessoires';
+            definir('famille', 'percussions-accessoires');
             break;
         case 'Fanfare':
-            filtres.formation = 'fanfare';
+            definir('formation', 'fanfare');
             break;
         case 'Big band':
-            filtres.formation = 'big-band';
+            definir('formation', 'big-band');
             break;
         case 'Harmonie':
-            filtres.formation = 'harmonie';
+            definir('formation', 'harmonie');
             break;
         case 'Groupe de rock':
-            filtres.formation = 'groupe-de-rock';
+            definir('formation', 'groupe-de-rock');
             break;
         case 'Orchestre de chambre':
-            filtres.formation = 'orchestre-de-chambre';
+            definir('formation', 'orchestre-de-chambre');
             break;
         case 'Orchestre symphonique':
-            filtres.formation = 'orchestre-symphonique';
+            definir('formation', 'orchestre-symphonique');
             break;
     }
     recherche.value = "";
-    actualiser();
 }
 
 async function actualiser() {
@@ -80,6 +80,7 @@ async function actualiser() {
 }
 
 function afficher(donnees) {
+    window.location.href = "#contenu";
     // Construction de la grille de produits :
     document.getElementById('bloc-grille').innerHTML = '';
     for (let instrument of donnees) {
