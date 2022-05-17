@@ -73,7 +73,7 @@
     transform: translateX(-100%);
     opacity: 0;
     transition: transform 1s linear,
-    opacity 0.6s linear;
+    opacity 0.4s linear;
 }
 .tableau.active{
     transform: translateX(0%);

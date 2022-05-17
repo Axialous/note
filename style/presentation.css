@@ -23,7 +23,16 @@
     margin-top: 50vh;
     background-color: rgb(112, 0, 0);
     font-size: 30px;
-    padding: 5px;  
+    padding: 5px; 
+    transition: .5s ease-in-out; 
+}
+.fa-circle-xmark{
+    opacity: 0;
+}
+
+.fa-circle-xmark_open{
+   opacity: 1;
+    transition-duration: 0.6s;
 }
 
 .texte-titre{
@@ -57,7 +66,7 @@
 }
 .texte-titre h1{
     font-family: 'GreatVibes';
-    font-size: 10em;
+    font-size: clamp(3em, 7em, 10em);
     font-weight: 400;
     text-shadow: 2px 2px 5px black;
     color: #f9efec; 
@@ -70,7 +79,8 @@
     background-color: #5009096e;
     width: 60%;
     height: auto;
-    margin: 40vh 0 0 20%;
+    margin-top: clamp(15em, 22em, 25em);
+    margin-left: 20%;
     padding: 10px;
 }
 .cacher{
@@ -82,7 +92,7 @@
     transition-duration: 0.6s;
 }
 .text-info p{
-    font-size: 2vh;
+    font-size: clamp(10px, 1vw, 20px);
     color: #f9efec;
     text-transform: uppercase;
     text-shadow: 2px 2px 5px black;
@@ -91,7 +101,7 @@
 .titre2{
     color: #f9efec;
     text-transform: uppercase;
-    font-size: 3vh;
+    font-size: clamp(1em, 2em, 50px);
     
 }
 
@@ -105,17 +115,17 @@
     }
 }   
 @media screen and (max-width:640px){
-    .texte-titre h1{
+    /* .texte-titre h1{
         font-size:6em;
-    }
-    .titre2{
+    } */
+    /* .titre2{
         font-size: 1.5em;
-    }
-    .text-info p{
+    } */
+    /* .text-info p{
         font-size: 1em;
     }
     .contener-tpresent{
         margin-top: 30vh;
-    }
+    } */
     
 }

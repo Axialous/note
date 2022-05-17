@@ -1,4 +1,5 @@
 <?php session_start();?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -10,10 +11,15 @@
     <title>Document</title>
 </head>
 <body>
+
     <section class="container-fluid pt-5">
         
         <article class="mx-auto col-4 py-2">
         <h1>Formulaire d'inscription</h1>
+        <?php
+if(isset($_COOKIE['cookie_form'])){
+       echo '<h2 class="text-danger">Utilisateur déjà éxistant</h2>';     }
+        ?>
             <form class="needs-validation" method="post" action="formulaire_inscription.php" novalidate>
                 <div class="form-group mb-3">
                         <label class="form-label" for="Nom">Nom</label>
@@ -32,7 +38,7 @@
                     </div>
                     <div class="form-floating mb-3">
                             <label for="pass">Mot de passe</label>
-                            <input class="form-control rounded-4" name="Password" type="Password" placeholder="Password" required  maxlenght="8">
+                            <input class="form-control rounded-4" name="Password" type="Password" placeholder="Password" required  minlenght="4" maxlenght="8">
                             <div class="invalid-feedback">Veuillez entrer un mot de passe valide</div>
                         </div>
                         <div class="form-floating mb-3">
@@ -40,8 +46,18 @@
                             <input class="form-control rounded-4" name="Role" type="type" placeholder="admin/visiteur..." required  maxlenght="8">
                             <div class="invalid-feedback">Veuillez entrer votre role</div>
                         </div>
+                        <div class="col-12 mb-3"><p>Sexe</p>
+                                <div class="mb-2 col-2">
+                                    <input id="credit" name="Sexe" value="Male"type="radio" class="form-check-input" checked="" required="">
+                                    <label class="form-check-label" for="credit">Male</label>
+                                </div>
+                                <div class="col-10">
+                                    <input id="credit" name="Sexe" value="Female" type="radio" class="form-check-input" checked="" required="">
+                                    <label class="form-check-label" for="credit">Female</label>
+                                </div>
+                        </div>  
                     <div class="form-check">
-                        <input type="checkbox" class="form-check-input" id="same-address">
+                        <input type="checkbox" class="form-check-input" id="same-address" required="">
                         <label class="form-check-label" for="same-address">Accepter notre charte d'utilisation</label>
                         <div class="invalid-feedback">Veuillez valider notre charte d'utilisation</div>
                     </div>    
