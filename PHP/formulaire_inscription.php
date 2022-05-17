@@ -15,21 +15,35 @@
                 } 
         $Nom = utf8_decode (valid_donnees($_POST['Nom']));
         $Prenom = utf8_decode (valid_donnees($_POST['Prenom']));
+        $CB = $_POST['Sexe'];
         $Email = valid_donnees($_POST['Email']);
         $Password = password_hash($_POST ['Password'], PASSWORD_DEFAULT);
         $Role = valid_donnees($_POST['Role']);
         
+        $sth = $dbco->prepare("
+        SELECT *
+        FROM user
+        WHERE Email='$Email'
+        ");
+        $sth->execute([$Email]);
+        $users = $sth->fetch();
+        if(count ($users)==0){
+        
+
         var_dump($Nom);
         var_dump($Prenom);
+        var_dump($CB);
         var_dump($Email);
         var_dump($Password);
         var_dump($Role);
-      
+        
+
         $sth = $dbco->prepare("
-            INSERT INTO user(Nom, Prenom, Email, Password, Role)
-            VALUES(:nom, :prenom, :email, :password, :role)");
+            INSERT INTO user(Nom, Prenom, Sexe, Email, Password, Role)
+            VALUES(:nom, :prenom, :sexe, :email, :password, :role)");
         $sth->bindParam(':nom',$Nom);
         $sth->bindParam(':prenom',$Prenom);
+        $sth->bindParam(':sexe',$CB);
         $sth->bindParam(':email',$Email);
         $sth->bindParam(':password',$Password);
         $sth->bindParam(':role',$Role);
@@ -48,8 +62,13 @@
         $_SESSION['Role']= $result[0]["Role"];
         $_SESSION['ID_Utilisateur']= $result[0]["ID_Utilisateur"];
         header("location:../utilisateur.php");
-        //On renvoie l'utilisateur vers la page de remerciement <script type="text/javascript">alert('Votre message a bien était envoyé')</script>
-    }
+        //On renvoie l'utilisateur vers la page de remerciement 
+    
+}else{
+    setcookie('cookie_form', 1, time()+10);
+    header("location:../PHP/inscription.php");
+}
+        }
 
    
     

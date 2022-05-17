@@ -1,9 +1,8 @@
 <div class="contener-presentation">
 
-   <div class="bulle">
-        <i class="fa-solid fa-circle-xmark"></i> 
+   <div class="bulle" onclick="toggle()">
         <i class="fa-solid fa-circle-info"></i>
-       
+        <i class="fa-solid fa-circle-xmark"></i> 
     </div>
     
 
