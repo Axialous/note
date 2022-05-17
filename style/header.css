@@ -46,7 +46,7 @@ header nav {
 }
 
 header nav > button {
-    background: url(../images/icones/compte-male.svg) center no-repeat;
+    background: url(../images/icones/compte.svg) center no-repeat;
     background-size: 40px;
 
     height: 53px;
