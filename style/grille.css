@@ -18,9 +18,6 @@
     left: 0;
     transform: translateX(100%);
 
-    background-color: hsl(13, 50%, 95%);
-    background-image: url(../images/fond_instruments.svg);
-
     padding: 50px 3.5%;
 
     width: 100%;
