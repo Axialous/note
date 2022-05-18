@@ -31,10 +31,14 @@ $_SESSION['Sexe'] = $result[0]['Sexe'];
 
           header ("Location:../utilisateur.php");
            echo "connexion reussi";}
-           else{ echo "identifiants invalides";}
+           else{ 
+             $_SESSION['error']=1;
+             header("location:../index.php"); 
                 
-      } else {
-                $errorMessage = "identifiant ou mot de passe invalide";
+      }} else {
+        setcookie('cookie_id', 2, time()+10);
+    header("location:../PHP/identification.php");
+                
             }
           
         

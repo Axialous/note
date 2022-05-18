@@ -12,9 +12,15 @@ const dialog= document.getElementById('dialog');
 const b1 = document.getElementById('b1')
 const bclose = document.getElementById('bclose')
 
+
 b1.addEventListener('click',function(){
     dialog.setAttribute('open',true);
 })
 bclose.addEventListener('click',function(){
     dialog.removeAttribute('open');
 })
+
+// if (document.getElementsById('text-danger')){
+// dialog.setAttribute('open',true);
+
+// }
