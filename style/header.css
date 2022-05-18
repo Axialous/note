@@ -31,8 +31,13 @@ header h1 {
     font-size: 35px;
     color: hsl(13, 50%, 95%);
 }
-header a{
-    text-decoration: none;
+
+header > div > a > h1:nth-child(1) {
+    display: block;
+}
+
+header > div > a > h1:nth-child(2) {
+    display: none;
 }
 
 
@@ -46,7 +51,7 @@ header nav {
 }
 
 header nav > button {
-    background: url(../images/icones/compte-male.svg) center no-repeat;
+    background: url(../images/icones/compte.svg) center no-repeat;
     background-size: 40px;
 
     height: 53px;
@@ -101,6 +106,8 @@ header nav > input + div {
     height: 0px;
     width: min(100%, 500px);
 
+    opacity: 0;
+
     transition: 750ms;
 }
 
@@ -112,6 +119,8 @@ header nav > input:checked + div {
     overflow-y: auto;
 
     height: calc(100vh - 157px);
+
+    opacity: 1;
 }
 
 #menu-filtre h1 {
@@ -254,7 +263,7 @@ header nav > input:checked + div {
 header form {
     position: absolute;
     left: 50%;
-    top: 77px;
+    top: 87px;
     transform: translateX(-50%);
 
     display: flex;
@@ -265,7 +274,7 @@ header form {
 
     margin: 10px auto;
 
-    height: 40px;
+    height: 30px;
     width: clamp(130px, 93%, 500px);
 
     transition: 750ms;
@@ -332,6 +341,22 @@ header form button {
     cursor: pointer;
 }
 
+@media screen and (min-width: 576px) {
+    header > div > a > h1:nth-child(1) {
+        display: none;
+    }
+    
+    header > div > a > h1:nth-child(2) {
+        display: block;
+    }
+}
+
+@media screen and (min-width: 1024px) and (max-width: 1424px) {
+    header form {
+        width: clamp(130px, 93%, 400px);
+    }
+}
+
 @media screen and (min-width: 1024px) {
     header {
         height: 100px;
@@ -348,7 +373,10 @@ header form button {
     }
 
     header form {
+        left: clamp(650px, 50%, 100%);
         top: 17px;
+        
+        height: 40px;
     }
 
     header nav > input:checked + div {
