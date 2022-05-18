@@ -24,9 +24,10 @@ session_start();
     if ($result){
      $passwordHash = $result[0]["Password"];
        if (password_verify($Password, $passwordHash)){
-$_SESSION['Email']= $Email;
-$_SESSION['Role']= $result[0]["Role"];
-$_SESSION['ID_Utilisateur']= $result[0]["ID_Utilisateur"];
+$_SESSION['Email'] = $Email;
+$_SESSION['Role'] = $result[0]['Role'];
+$_SESSION['ID_Utilisateur'] = $result[0]['ID_Utilisateur'];
+$_SESSION['Sexe'] = $result[0]['Sexe'];
 
           header ("Location:../utilisateur.php");
            echo "connexion reussi";}
