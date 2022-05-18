@@ -5,21 +5,27 @@
   height:150px;
   background: hsl(354, 72%, 39%);
   background: radial-gradient(circle, hsl(354, 72%, 39%) 6%, rgba(3,1,2,1) 54%);}
-.logo-reseau{
-  position: relative;
-  left: 45%;
-  top: 50px;
-}
+
+  .logo-reseau{
+text-align: center;
+padding-top: 40px;
+
+} 
 .fa-brands{
   font-size: 35px;
   margin-left: 15px;
   color: rgba(255, 255, 255, 0.74);
   cursor: pointer;
+  transition-duration: .5s;
+}
+.fa-brands:hover{
+  color: black;
+  transform: scale(120%);
+
 }
 .texte-footer{
-  position: relative;
-  left: 41%;
-  top: 48%;
+ text-align: center;
+padding-top: 10px;
   color: rgba(255, 255, 255, 0.74);
   font-size: clamp(1em, 1.5em, 5em);
 }
