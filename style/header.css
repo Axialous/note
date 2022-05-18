@@ -51,10 +51,12 @@ header > div > a > h1:nth-child(2) {
 /* MENU */
 
 header nav {
+    display: flex;
     overflow: hidden;
 }
 
-header nav > button {
+
+header nav > button, header nav > form > button {
     background: url(../images/icones/compte.svg) center no-repeat;
     background-size: 40px;
 
@@ -66,7 +68,7 @@ header nav > button {
     transition: 125ms;
 }
 
-header nav > button:hover {
+header nav > button:hover, header nav > form > button:hover {
     transform: scale(111%);
 }
 
@@ -264,7 +266,7 @@ header nav > input:checked + div {
 
 /* BARRE DE RECHERCHE */
 
-header form {
+header > form {
     position: absolute;
     left: 50%;
     top: 87px;
@@ -284,7 +286,7 @@ header form {
     transition: 750ms;
 }
 
-header form > * {
+header > form > * {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -292,7 +294,7 @@ header form > * {
     padding: 8px;
 }
 
-header form label {
+header > form label {
     background-color: hsl(13, 50%, 95%);
     border-radius: 18px 0 0 18px;
     
@@ -302,17 +304,17 @@ header form label {
     cursor: pointer;
 }
 
-header form img {
+header > form img {
     height: 100%;
 
     transition: 250ms;
 }
 
-header form img:hover {
+header > form img:hover {
     transform: scale(125%);
 }
 
-header form input {
+header > form input {
     flex-grow: 1;
 
     background-color: hsla(24, 8%, 13%, 0.5);
@@ -327,15 +329,15 @@ header form input {
     transition: 500ms;
 }
 
-header form input:focus {
+header > form input:focus {
     background-color: hsla(24, 8%, 13%, 0.75);
 }
 
-header form datalist {
+header > form datalist {
     display: none;
 }
 
-header form button {
+header > form button {
     background-color: hsl(13, 50%, 95%);
     border-radius: 0px 18px 18px 0;
 
@@ -356,7 +358,7 @@ header form button {
 }
 
 @media screen and (min-width: 1024px) and (max-width: 1424px) {
-    header form {
+    header > form {
         width: clamp(130px, 93%, 400px);
     }
 }
@@ -376,7 +378,7 @@ header form button {
         padding: 20px 3.5%;
     }
 
-    header form {
+    header > form {
         left: clamp(650px, 50%, 100%);
         top: 17px;
         

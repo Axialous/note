@@ -5,13 +5,24 @@
         <h1 class="logo-anim"></h1>
     </a>
         <nav>
-        
-            <button id="b1"></button>
-                <dialog id="dialog">
             <?php
-        include 'PHP/identification.php';
-        ?>
-                </dialog>
+            if (isset($_SESSION['ID_Utilisateur'])) {
+            ?>
+                <form action="PHP/deconnexion.php">
+                    <button type=submit style="background-image: url(images/icones/compte-<?= $_SESSION['Sexe'] ?>.svg);"></button>
+                </form>
+            <?php
+            } else {
+            ?>
+                <button id="b1"></button>
+            <?php
+            }
+            ?>
+            <dialog id="dialog">
+                <?php
+                include 'PHP/identification.php';
+                ?>
+            </dialog>
             <input type="checkbox" id="bouton-menu-filtre">
             <div id="menu-filtre">
                 <h1>Filtrez votre recherche :</h1>
