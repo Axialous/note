@@ -80,7 +80,11 @@ async function actualiser() {
 }
 
 function afficher(donnees) {
-    window.location.href = "#contenu";
+    if (document.documentElement.clientWidth < 1024) {
+        window.scrollTo(0, document.documentElement.clientHeight - 157);
+    } else {
+        window.scrollTo(0, document.documentElement.clientHeight - 100);
+    }
     // Construction de la grille de produits :
     document.getElementById('bloc-grille').innerHTML = '';
     for (let instrument of donnees) {
