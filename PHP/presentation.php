@@ -19,7 +19,4 @@
         <p>Aidez nous a sensibiliser le monde a d'autre genre, d'autre style de musique</p>
         </div>
     </div>
-          
-    
-    <img src="picture/fond-presentation-index.jpg" alt="photo de salle de concert">
 </div>
