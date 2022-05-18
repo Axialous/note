@@ -9,8 +9,8 @@
 //     fenetre.moveTo(5000,5000);
 // }
 const dialog= document.getElementById('dialog');
-const b1 = document.getElementById('b1')
-const bclose = document.getElementById('bclose')
+const b1 = document.getElementById('b1');
+const bclose = document.getElementById('bclose');
 
 
 b1.addEventListener('click',function(){
