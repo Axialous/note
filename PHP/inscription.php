@@ -48,11 +48,11 @@ if(isset($_COOKIE['cookie_form'])){
                         </div>
                         <div class="col-12 mb-3"><p>Sexe</p>
                                 <div class="mb-2 col-2">
-                                    <input id="credit" name="Sexe" value="Male"type="radio" class="form-check-input" checked="" required="">
+                                    <input id="credit" name="Sexe" value="male"type="radio" class="form-check-input" checked="" required="">
                                     <label class="form-check-label" for="credit">Male</label>
                                 </div>
                                 <div class="col-10">
-                                    <input id="credit" name="Sexe" value="Female" type="radio" class="form-check-input" checked="" required="">
+                                    <input id="credit" name="Sexe" value="female" type="radio" class="form-check-input" checked="" required="">
                                     <label class="form-check-label" for="credit">Female</label>
                                 </div>
                         </div>  
