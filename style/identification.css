@@ -1,10 +1,54 @@
 .container-general{
+    width: 80%;
+    height: auto;
+}
+ #dialog{
+     margin: 10% 30%;
     width: 40%;
-    height: 300px;
+    height: 250px;
+    background-color: beige;
+    border-radius: 10px;
+    background-image: url(../images/fond_instruments.svg);
 }
 #bclose{
-    background-color: blue;
+    text-transform: uppercase;
+    margin: 10px;
+    color: rgb(0, 0, 0);
 }
 .container-general form{
-    margin: 50px;
+    margin: 0 50px;
+
+}
+.contact{
+    margin: 20px 0;
+    display: inline-block;
+}
+.contact input{
+    border-radius: 2px;
+    border: 1px solid grey;
+    background-color: white;
+    padding: 2px;
+}
+.contact label{
+    font-size: 20px;
+}
+.formulaire1 input{
+    margin-left: 22px;
+}
+#b2{
+display: block;
+    border: 2px solid;
+    padding: 5px;
+    transition-duration: .25s;
+}
+#b2:hover{
+    background-color: black;
+    color: #fff;
+    
+}
+.lien{
+    position: absolute;
+    left: 20%;
+    bottom: 50px;
+   
 }

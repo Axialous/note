@@ -1,7 +1,7 @@
 
 
     <script src="../java/identification.js"></script>
-    <link rel="stylesheet" href="../style/identification.css">
+    
 <button id="bclose">X</button>
     <div class=container-general>
         <form method="post" action="PHP/formulaire.php">
@@ -21,8 +21,9 @@ if(isset($_COOKIE['cookie_ide'])){
             <button id='b2' class="boutton-envoyer" value="Submit">
                 <span>Envoyer</span>
             </button>
+            <a class="lien" href="PHP/inscription.php" >Pas encore inscrit?</a>
         </form>
-        <a class="lien" href="PHP/inscription.php" >Pas encore inscrit?</a>
+        
     </div>  
 
 

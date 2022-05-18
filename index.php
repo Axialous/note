@@ -17,6 +17,7 @@ if(isset($_COOKIE['cookie_id'])){
         <link rel="stylesheet" href="style/tableau-categorie.css">
         <link rel="stylesheet" href="style/grille.css">
         <link rel="stylesheet" href="style/footer.css">
+        <link rel="stylesheet" href="style/identification.css">
         <script src="https://unpkg.com/typewriter-effect@latest/dist/core.js"></script>
         <script src="java/header.js" async></script>
         <script src="java/tableau-categorie.js" async></script>
