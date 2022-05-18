@@ -53,6 +53,7 @@
 .titre::before{
 
     background: linear-gradient(to right,transparent,#818078);
+    margin-right: 2%;
 
 }
 .titre::after{
@@ -73,8 +74,8 @@
 .contener-tpresent{
     bottom: 15px;
     position: absolute;
-    background-color: hsla(13, 50%, 95%, 45%);
-    box-shadow: 0 0 2px 1px hsla(13, 50%, 95%, 45%);
+    background-color: hsla(13, 50%, 95%, 65%);
+    box-shadow: 0 0 2px 1px hsla(13, 50%, 95%, 65%);
     border-radius: 15px;
     width: 66%;
     padding: 25px;
