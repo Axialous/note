@@ -6,12 +6,24 @@
   justify-content: center;
   width: 100%;
   padding: 50px;
-  background: radial-gradient(circle, hsl(354, 72%, 39%) 6%, rgb(3,1,2) 54%);}
+  background: radial-gradient(circle, hsl(354, 72%, 39%) 6%, rgb(3,1,2) 54%);
+}
+  .logo-reseau{
+text-align: center;
+padding-top: 40px;
+
+} 
 .fa-brands{
   font-size: 35px;
   margin-left: 15px;
   color: rgba(255, 255, 255, 0.74);
   cursor: pointer;
+  transition-duration: .5s;
+}
+.fa-brands:hover{
+  color: black;
+  transform: scale(120%);
+
 }
 .texte-footer{
   color: rgba(255, 255, 255, 0.74);

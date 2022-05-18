@@ -29,13 +29,16 @@
         <link rel="stylesheet" href="style\footer.css">
         <link rel="stylesheet" href="page-produit.css">
         <script src='java\presentation.js' async></script>
+        <script src="https://unpkg.com/typewriter-effect@latest/dist/core.js"></script>
+        <script src="java/header.js" async></script>
         <script src="https://kit.fontawesome.com/29ac4cabe1.js"></script>
     </head>
     <body>
-    <body>
+      
     <?php
         include 'PHP/header.php';
         ?>
+        
         <main class="contenair-produit">
       <?php
                 foreach($produits as $produit){
@@ -52,10 +55,10 @@
                 ?> 
         </main>
 
-    <footer>
+    
          <?php
          include 'PHP/footer.php'
          ?>
-        </footer>
+       
     </body>
     </html>
