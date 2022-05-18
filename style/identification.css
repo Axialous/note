@@ -2,3 +2,9 @@
     width: 40%;
     height: 300px;
 }
+#bclose{
+    background-color: blue;
+}
+.container-general form{
+    margin: 50px;
+}

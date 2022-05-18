@@ -18,7 +18,8 @@
             <?php
             }
             ?>
-            <dialog id="dialog">
+            <dialog id="dialog" <?php if(isset($_SESSION['error']) && $_SESSION['error']==1){echo'open';$_SESSION['error']=0;setcookie('cookie_ide', 2, time()+10);
+            }?>>
                 <?php
                 include 'PHP/identification.php';
                 ?>

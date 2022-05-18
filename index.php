@@ -1,7 +1,10 @@
 <?php
 session_start();
 ?>
-
+<?php
+if(isset($_COOKIE['cookie_id'])){
+       echo '<h2 id="text-danger">identifiant ou mot de passe invalide</h2>';     }
+        ?>
 <!DOCTYPE html>
 <html lang="fr">
     <head>
