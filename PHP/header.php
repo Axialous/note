@@ -18,7 +18,11 @@
             <?php
             }
             ?>
-
+            <dialog id="dialog">
+                <?php
+                include 'PHP/identification.php';
+                ?>
+            </dialog>
             <input type="checkbox" id="bouton-menu-filtre">
             <div id="menu-filtre">
                 <h1>Filtrez votre recherche :</h1>
