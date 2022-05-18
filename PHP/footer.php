@@ -8,6 +8,6 @@
             <i class="fa-brands fa-instagram"></i>
         </div>
         <div class="texte-footer">
-            <p>Notre politique/Nous contacter/Qui sommes nous?</p>
+            <p>Notre politique / Nous contacter / Qui sommes nous ?</p>
         </div>
 </div>

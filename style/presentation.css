@@ -1,9 +1,9 @@
-.contener-presentation img{
-    width: 100%;
+#presentation {
+    background: url(../picture/fond-presentation-index.jpg) bottom;
+    background-size: cover;
     height: calc(100vh - 157px);
-    opacity: 1;
-    /* box-shadow: inset 0 0 500px 500px #000000 ; */
 }
+
 .bulle{
     transition: .5s ease-in-out;
     position: relative;
@@ -61,7 +61,7 @@
 }
 .texte-titre h1{
     font-family: 'GreatVibes';
-    font-size: clamp(3em, 7em, 10em);
+    font-size: 72px;
     font-weight: 400;
     text-shadow: 2px 2px 5px black;
     color: #f9efec; 
@@ -104,23 +104,7 @@
 
 
 @media screen and (min-width: 1024px) {
-    .contener-presentation img {
-
+    #presentation {
         height: calc(100vh - 100px);
     }
-}   
-@media screen and (max-width:640px){
-    /* .texte-titre h1{
-        font-size:6em;
-    } */
-    /* .titre2{
-        font-size: 1.5em;
-    } */
-    /* .text-info p{
-        font-size: 1em;
-    }
-    .contener-tpresent{
-        margin-top: 30vh;
-    } */
-    
 }

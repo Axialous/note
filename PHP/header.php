@@ -1,7 +1,8 @@
 <header>
     <div>
     <a href="index.php">
-    <h1 class="logo-anim"></h1>
+        <h1>Note</h1>
+        <h1 class="logo-anim"></h1>
     </a>
         <nav>
         
@@ -28,11 +29,11 @@
                         <h2>Taille</h2>
                         <input type="radio" name="taille" onclick="retirer('taille')" checked>
                         <div id="choix-taille">
-                            <input type="radio" name="taille" onclick="definir('taille', 1)" id="taille-minuscule"><label for="taille-minuscule">🐌</label>
-                            <input type="radio" name="taille" onclick="definir('taille', 2)" id="taille-petit"><label for="taille-petit">🐓</label>
-                            <input type="radio" name="taille" onclick="definir('taille', 3)" id="taille-moyen"><label for="taille-moyen">🐖</label>
-                            <input type="radio" name="taille" onclick="definir('taille', 4)" id="taille-grand"><label for="taille-grand">🐎</label>
-                            <input type="radio" name="taille" onclick="definir('taille', 5)" id="taille-gigantesque"><label for="taille-gigantesque">🐳</label>
+                            <input type="radio" name="taille" onclick="definir('taille', 1)" id="taille-1"><label for="taille-1">🐌</label>
+                            <input type="radio" name="taille" onclick="definir('taille', 2)" id="taille-2"><label for="taille-2">🐓</label>
+                            <input type="radio" name="taille" onclick="definir('taille', 3)" id="taille-3"><label for="taille-3">🐖</label>
+                            <input type="radio" name="taille" onclick="definir('taille', 4)" id="taille-4"><label for="taille-4">🐎</label>
+                            <input type="radio" name="taille" onclick="definir('taille', 5)" id="taille-5"><label for="taille-5">🐳</label>
                         </div>
                     </li>
                     <li>
