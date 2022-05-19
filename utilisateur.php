@@ -15,11 +15,13 @@ catch (PDOException $e) {
 
 if ($_SESSION['Role'] == 'admin') {
     $donnees_instruments = $BDD->prepare("SELECT *
-                                          FROM produits");
+                                          FROM produits
+                                          ORDER BY Nom");
 } else {
     $donnees_instruments = $BDD->prepare("SELECT *
                                           FROM produits
-                                          WHERE ID_user = '" . $_SESSION['ID_Utilisateur'] . "'");
+                                          WHERE ID_user = '" . $_SESSION['ID_Utilisateur'] . "'
+                                          ORDER BY Nom");
 }
 $donnees_instruments->execute();
 $instruments = $donnees_instruments->fetchAll();
@@ -46,19 +48,19 @@ $formations = $donnees_formations->fetchAll();
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
-        <link rel="stylesheet" href="utilisateur.php">
+        <link rel="stylesheet" href="style/header.css">
+        <link rel="stylesheet" href="style/footer.css">
+        <script src="https://unpkg.com/typewriter-effect@latest/dist/core.js"></script>
+        <script src='java/header.js' async></script>
+        <script src='java/filtre_utilisateur.js' async></script>
+        <script src="https://kit.fontawesome.com/29ac4cabe1.js"></script>
     </head>
     <body class="bg-light">
-        <header>
-        <a href="index.php"><img src="images/logo.svg" alt="logo" ></a>
-        <div >
-            <form action="PHP/deconnexion.php">
-                <button class="btn btn-danger col-3 offset-md-9 " type="submit">Déconnexion</button>
-            </form>
-        </div>
-        </header>
+        <?php
+        include 'PHP/header.php';
+        ?>
         <main>
-            <section class="container-fluid ">
+            <section class="container-fluid py-5">
                 <article class="mx-auto col-6 py-2 mx-2 border border-dark rounded">
                     <form  action="PHP/ajouter_instrument.php" method="post" enctype="multipart/form-data">
                         <h1 class="display-5 fw-bold mx-4">Ajouter un nouvel instrument : </h1>
@@ -124,7 +126,7 @@ $formations = $donnees_formations->fetchAll();
                             </section>
 
             
-            <section class="container-fluid row">
+            <section id="bloc-grille" class="container-fluid row">
                 
                 <?php
 
@@ -213,5 +215,9 @@ foreach ($instruments as $instrument) {
 
             </section>
         </main>
+    
+        <?php
+        include 'PHP/footer.php';
+        ?>
     </body>
 </html>

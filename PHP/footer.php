@@ -1,4 +1,4 @@
-<div class="contener">
+<footer class="contener">
 
  
         <div class="logo-reseau">
@@ -10,4 +10,4 @@
         <div class="texte-footer">
             <p>Notre politique / Nous contacter / Qui sommes nous ?</p>
         </div>
-</div>
+</footer>

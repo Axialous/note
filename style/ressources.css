@@ -19,6 +19,7 @@
 body {
     background-color: hsl(13, 50%, 95%);
     background-image: url(../images/fond_instruments.svg);
+    min-width: 280px;
 }
 
 ::selection {

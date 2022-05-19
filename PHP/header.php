@@ -37,7 +37,7 @@
                             <input type="radio" name="famille" onclick="definir('famille','cordes-frappees')" id="famille-cordes-frappees"><label for="famille-cordes-frappees">🎹</label>
                             <input type="radio" name="famille" onclick="definir('famille','vents-bois')" id="famille-vents-bois"><label for="famille-vents-bois">🎷</label>
                             <input type="radio" name="famille" onclick="definir('famille','vents-cuivres')" id="famille-vents-cuivres"><label for="famille-vents-cuivres">🎺</label>
-                            <input type="radio" name="famille" onclick="definir('famille','percussions-claviers')" id="famille-percussions-claviers"><label for="famille-percussions-claviers"></label>
+                            <input type="radio" name="famille" onclick="definir('famille','percussions-claviers')" id="famille-percussions-claviers"><label for="famille-percussions-claviers"><img src="images/xylophone.svg"></label>
                             <input type="radio" name="famille" onclick="definir('famille','percussions-peaux')" id="famille-percussions-peaux"><label for="famille-percussions-peaux">🥁</label>
                             <input type="radio" name="famille" onclick="definir('famille','percussions-accessoires')" id="famille-percussions-accessoires"><label for="famille-percussions-accessoires">🔔</label>
                         </div>

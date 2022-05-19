@@ -1,4 +1,6 @@
 <?php
+session_start();
+
             $servname = "localhost"; $dbname = "note"; $user = "root"; $pass = "";$ID = $_GET["ID"] ;
             try{
                 $dbco = new PDO("mysql:host=$servname;dbname=$dbname", $user, $pass);
