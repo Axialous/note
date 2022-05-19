@@ -21,7 +21,7 @@ if(isset($_COOKIE['cookie_id'])){
         <script src="https://unpkg.com/typewriter-effect@latest/dist/core.js"></script>
         <script src="java/header.js" async></script>
         <script src="java/tableau-categorie.js" async></script>
-        <script src='java\filtre.js' async></script>
+        <script src='java/filtre.js' async></script>
         <script src='java/identification.js' async></script>
         <script src='java/presentation.js' async></script>
         <script src="https://kit.fontawesome.com/29ac4cabe1.js"></script>
@@ -48,10 +48,8 @@ if(isset($_COOKIE['cookie_id'])){
                     ?>
                 </div>
             </main>
-        <footer>
          <?php
          include 'PHP/footer.php';
          ?>
-        </footer>
     </body>
 </html>

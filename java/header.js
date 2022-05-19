@@ -3,7 +3,7 @@ new Typewriter(texteanim,{
     deleteSpeed:60,
     loop:true
 })
-.typeString('Une note pour: <strong>Vivre</strong>')
+.typeString('Une note pour : <strong>Vivre</strong>')
 .pauseFor( 1500)
 .deleteChars(5)
 .typeString('<strong>Rêver</strong>')

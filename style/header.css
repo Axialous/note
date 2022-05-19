@@ -30,6 +30,10 @@ header h1 {
     color: hsl(13, 50%, 95%);
 }
 
+header > div > a {
+    text-decoration: none;
+}
+
 header > div > a > h1:nth-child(1) {
     display: block;
 }
@@ -221,6 +225,11 @@ header nav > input:checked + div {
     cursor: pointer;
 
     transition: 250ms;
+}
+
+#menu-filtre label img {
+    height: 85%;
+    transform: translateY(5%);
 }
 
 #menu-filtre input:not(:checked) + label:hover, #menu-filtre input:hover + div input:checked + label {

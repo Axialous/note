@@ -1,5 +1,5 @@
 
-<div class="contener">
+<footer class="contener">
 <nav>
     <div class="contener-logo"><h1>Nos réseaux</h1></div>
        <div class="fa-brands fa-whatsapp"></div>
@@ -10,4 +10,4 @@
         <div class="texte-footer">
             <p>Notre politique / Nous contacter / Qui sommes nous ?</p>
         </div>
-</div>
+</footer>
