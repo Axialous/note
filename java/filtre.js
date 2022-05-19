@@ -1,7 +1,9 @@
 var filtres = {}
 
 function definir(filtre, valeur) {
+    // filtre et valeur = famille, corde frappées par exemple
     filtres[filtre] = valeur;
+    // la var filtres va incrementer corde frappées dans famille
     document.getElementById('bouton-menu-filtre').checked = false;
     document.querySelector(`#${filtre}-${valeur}`).checked = true;
     actualiser();
@@ -16,6 +18,7 @@ function retirer(filtre) {
 function filtrer_recherche() {
     recherche = document.getElementById('recherche');
     switch (recherche.value) {
+        // switch=on met la valeur qu'on veux tester (recherche.value) et ca nous sors tous les résultats
         case 'Cordes frottées':
             definir('famille', 'cordes-frottees');
             break;
@@ -60,15 +63,20 @@ function filtrer_recherche() {
             break;
     }
     recherche.value = "";
+    // permet de vider la barre après la recherche
 }
 
 async function actualiser() {
+    // async= permet un fonctionnement hors timelapse
     let reponse = await fetch('PHP/filtres.php', {
+        // reponse = au resultat de la recheche de fetch dans filtres.php
         method: 'POST',
         headers: {
             'Content-Type': 'application/json;charset=utf-8'
+            // a mettre quand tu envoie en JSON, plus rapide il parait.
         },
         body: JSON.stringify(filtres)
+        // on envoit a la page filtre.php la var filtres transformés en JSON
     });
 
     if (reponse.ok) {

@@ -1,12 +1,12 @@
-<div class="contener">
 
- 
-        <div class="logo-reseau">
-            <i class="fa-brands fa-whatsapp"></i>
-            <i class="fa-brands fa-twitter"></i>
-            <i class="fa-brands fa-pinterest"></i>
-            <i class="fa-brands fa-instagram"></i>
-        </div>
+<div class="contener">
+<nav>
+    <div class="contener-logo"><h1>Nos réseaux</h1></div>
+       <div class="fa-brands fa-whatsapp"></div>
+       <div class="fa-brands fa-twitter"></div>
+       <div class="fa-brands fa-pinterest"></div>
+       <div class="fa-brands fa-instagram"></div>
+</nav>
         <div class="texte-footer">
             <p>Notre politique / Nous contacter / Qui sommes nous ?</p>
         </div>
