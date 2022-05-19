@@ -27,11 +27,12 @@
     border-radius: 3px;
     
     height: 380px;
-    width: min(100%, 555px);
+    width: min(100%, 1700px);
 
     margin: 20px;
 
-
+    border: 15px double white;
+    
     cursor: pointer;
     transition: 250ms;
 }
