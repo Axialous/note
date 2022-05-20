@@ -80,7 +80,7 @@ async function actualiser() {
 }
 
 function afficher(donnees) {
-    window.scrollTo(0, document.documentElement.clientHeight);
+    window.scrollTo(0, 0 + document.getElementById('form-ajouter').offsetHeight);
     // Construction de la grille de produits :
     document.getElementById('bloc-grille').innerHTML = donnees;
 }
