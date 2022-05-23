@@ -32,12 +32,12 @@ if(!empty ($_POST ['Nom']) && !empty ($_POST ['Prenom']) && !empty ($_POST['Sexe
     if(count ($users)==0){
 
 
-    var_dump($Nom);
-    var_dump($Prenom);
-    var_dump($CB);
-    var_dump($Email);
-    var_dump($Password);
-    var_dump($Role);
+    // var_dump($Nom);
+    // var_dump($Prenom);
+    // var_dump($CB);
+    // var_dump($Email);
+    // var_dump($Password);
+    // var_dump($Role);
 
 
     $sth = $dbco->prepare("

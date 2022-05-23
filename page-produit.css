@@ -1,27 +1,66 @@
 @import url(../style\ressources.css);
-.contenair-produit{
-    width: 100%;
-    height: auto;
-    display:block; 
- background:linear-gradient(to bottom,#3a1d15,#824838c9,#731C24,#A91C2B,#D21C31);
- 
- background-image: url(../images/fond_instruments.svg);
+
+.wiki {
+    width: 28%;
+    height: 500px;
+    border: 1px solid;
+    border-radius: 5px;
+    position: absolute;
+    transform: translateX(-50%);
+    left: 85%;
+    top: 310px;
 }
 
-.instru{
+
+/* .box{
+    display: none;
+    width: 100%;
+}
+
+a:hover + .box,.box:hover{
+    display: block;
+    position: relative;
+    z-index: 100;
+} */
+
+.contenair-produit {
+    width: 100%;
+    height: auto;
+    display: block;
+    background: linear-gradient(to bottom, #3a1d15, #824838c9, #731C24, #A91C2B, #D21C31);
+
+    background-image: url(../images/fond_instruments.svg);
+}
+
+.instru {
     width: 80%;
     height: auto;
-    padding: 60px 0 60px 20%;
-    
+    padding: 60px 0 60px 10%;
+
 }
-.instru img{
-    width: 100%;
+
+.instru h1 {
+    text-align: center;
+    font-family: 'GreatVibes';
+    font-size: 72px;
+    font-weight: 400;
+    text-shadow: 2px 2px 5px black;
+    background-color: rgba(250, 235, 215, 0.259);
+    margin-bottom: 25px;
+    padding: 15px 0;
+    border-radius: 10px;
+    border: 4px solid #51291E;
+}
+
+.instru img {
+    width: 85%;
     height: 100%;
     border-radius: 10px;
     box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 6px, rgba(0, 0, 0, 0.24) 0px 1px 6px;
     margin-bottom: 50px;
 }
-figcaption{
+
+figcaption {
     font-family: 'RobotoSlab';
     font-size: 40px;
     text-align: center;
@@ -29,14 +68,15 @@ figcaption{
     margin-bottom: 5px;
     padding: 15px 0;
     border-radius: 10px;
-    border: 4px solid #51291E;
+    border: 3px solid #51291E;
 }
-.instru p{
+
+.instru p {
     font-family: 'Nunito';
     font-size: 25px;
-    text-align: center;
-    background-color: rgba(255, 255, 255, 0.76);
+    text-align: justify;
+    background-color: rgba(250, 235, 215, 0.259);
     border-radius: 10px;
-    padding: 15px 0;
-    border: 4px solid #51291E;
+    padding: 11px;
+    border: 3px solid #51291E;
 }
