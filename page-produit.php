@@ -27,6 +27,7 @@ session_start();
         <link rel="stylesheet" href="style\font.css">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="icon" type="image/svg" sizes="64x64" href="picture/logo-note2.svg">
         <link rel="stylesheet" href="style\header.css">
         <link rel="stylesheet" href="style\footer.css">
         <link rel="stylesheet" href="page-produit.css">
@@ -44,7 +45,7 @@ session_start();
                 foreach($produits as $produit){
                     ?>
         <article class="wiki">
-            <embed src="https://fr.wikipedia.org/wiki/<?php echo utf8_encode( $produit['Nom']) ?>#firstHeading" width="100%" height="496" object-fit= "contain"/>
+            <embed src="https://fr.wikipedia.org/wiki/<?php echo utf8_encode( $produit['Nom']) ?>#firstHeading" width="100%" height="500" object-fit= "contain"/>
         </article>
         <?php  
                 }

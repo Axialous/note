@@ -2,26 +2,31 @@
 
 .wiki {
     width: 28%;
-    height: 500px;
-    border: 1px solid;
+    height: 66.5%;
+
     border-radius: 5px;
     position: absolute;
     transform: translateX(-50%);
     left: 85%;
-    top: 310px;
+    top: 350px;
 }
-
-
-/* .box{
+@media screen and (max-width:1247px){
+embed{
+    height: 250px;
+}
+.wiki{
     display: none;
-    width: 100%;
+} 
+.instru img{
+    margin-left:8%;
+}
+}
+@media screen and (max-width:451px){
+    .instru img{
+        margin-left: 0%;
+    }
 }
 
-a:hover + .box,.box:hover{
-    display: block;
-    position: relative;
-    z-index: 100;
-} */
 
 .contenair-produit {
     width: 100%;
@@ -42,7 +47,7 @@ a:hover + .box,.box:hover{
 .instru h1 {
     text-align: center;
     font-family: 'GreatVibes';
-    font-size: 72px;
+    font-size: calc(4vw + 20px);
     font-weight: 400;
     text-shadow: 2px 2px 5px black;
     background-color: rgba(250, 235, 215, 0.259);
@@ -54,15 +59,18 @@ a:hover + .box,.box:hover{
 
 .instru img {
     width: 85%;
+    max-width: 65em;
+    min-width: 13em;
     height: 100%;
     border-radius: 10px;
     box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 6px, rgba(0, 0, 0, 0.24) 0px 1px 6px;
     margin-bottom: 50px;
+    padding-left: 0%;
 }
 
 figcaption {
     font-family: 'RobotoSlab';
-    font-size: 40px;
+    font-size: calc(3vw + 18px) ;
     text-align: center;
     background-color: rgba(250, 235, 215, 0.259);
     margin-bottom: 5px;
@@ -73,7 +81,7 @@ figcaption {
 
 .instru p {
     font-family: 'Nunito';
-    font-size: 25px;
+    font-size: calc(2vw + 8px);
     text-align: justify;
     background-color: rgba(250, 235, 215, 0.259);
     border-radius: 10px;
