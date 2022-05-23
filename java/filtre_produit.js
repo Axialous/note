@@ -7,6 +7,6 @@ function retirer(filtre) {
 }
 
 function filtrer_recherche() {
-    valeur = document.getElementById('recherche').innerText;
+    valeur = document.getElementById('recherche').value;
     window.location.href = `index.php?action=filtrer_recherche;valeur=${valeur}`;
 }
