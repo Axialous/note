@@ -18,6 +18,12 @@ session_start();
             catch(PDOException $e){
                 echo "Erreur : " . $e->getMessage();
             }
+
+            // Exécution de la requête chargeant la liste des formations :
+            $donnees_formations = $dbco->prepare("SELECT Titre, Formation
+                                                 FROM formations");
+            $donnees_formations->execute();
+            $formations = $donnees_formations->fetchAll();
         ?>
 <!DOCTYPE html>
 <html lang="fr">
@@ -31,9 +37,12 @@ session_start();
         <link rel="stylesheet" href="style\header.css">
         <link rel="stylesheet" href="style\footer.css">
         <link rel="stylesheet" href="page-produit.css">
+        <link rel="stylesheet" href="style/identification.css">
         <script src='java\presentation.js' async></script>
         <script src="https://unpkg.com/typewriter-effect@latest/dist/core.js"></script>
         <script src="java/header.js" async></script>
+        <script src="java/filtre_produit.js" async></script>
+        <script src='java/identification.js' async></script>
         <script src="https://kit.fontawesome.com/29ac4cabe1.js"></script>
     </head>
     <body>
@@ -53,12 +62,25 @@ session_start();
         <main class="contenair-produit">
       <?php
                 foreach($produits as $produit){
+                    $tableau_formations = explode(';', utf8_encode ($produit['Formations']));
+                    $valeurs_formations = "";
+                    foreach ($formations as $formation) {
+                        if (in_array($formation['Formation'], $tableau_formations)) {
+                            $valeurs_formations .= ((strlen($valeurs_formations) > 0) ? ", " : "") . $formation['Titre'];
+                        }
+                    }
                     ?>
                 <article class="instru">
                     <h1><?php echo utf8_encode ($produit['Nom']) ?></h1>
                         <figure>
                             <img title= <?php echo $produit['Nom'] ?> src="picture/<?php echo $produit['Image']?>" alt="Image <?php echo $produit['Nom'] ?>">
-                            <figcaption><?php echo utf8_encode ($produit['Formations'])?> </figcaption>
+                            <?php
+                            if (strlen($valeurs_formations) > 0) {
+                            ?>
+                                <figcaption><?php echo $valeurs_formations ?> </figcaption>
+                            <?php
+                            }
+                            ?>
                         </figure>
                         <p> <?php echo utf8_encode ($produit['Description']) ?></p>
                 </article>
