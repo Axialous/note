@@ -7,21 +7,23 @@
 }
 
 .bulle{
-    transition: .5s ease-in-out;
+    transition: .7s ease-in-out;
     position: relative;
     width:94px;
     height: auto;
-    overflow: hiden;
+    border-radius: 20px;
+    
 }
 .fa-solid{
     position: absolute;
     cursor: pointer;
     color: white;  
-    margin-top: 50vh;
+    margin-top: 60vh;
     background-color: rgb(112, 0, 0);
     font-size: 30px;
-    padding: 5px; 
-    transition: .5s ease-in-out; 
+    margin-left: 5px;
+    transition: .7s ease-in-out; 
+    border-radius: 20px;
 }
 .fa-circle-xmark{
     opacity: 0;
@@ -29,7 +31,8 @@
 
 .fa-circle-xmark_open{
    opacity: 1;
-    transition-duration: 0.6s;
+   transform: rotate(1080deg);
+    transition-duration: 0.7s;
 }
 
 .texte-titre{
