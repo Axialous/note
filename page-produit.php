@@ -6,7 +6,7 @@ session_start();
                 $dbco = new PDO("mysql:host=$servname;dbname=$dbname", $user, $pass);
                 $dbco->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
                 $sth = $dbco->prepare("
-                SELECT ID,Nom,Image,Description
+                SELECT ID,Nom,Image,Description,Formations
                 FROM produits
                 WHERE ID= $ID
                 
@@ -40,18 +40,27 @@ session_start();
     <?php
         include 'PHP/header.php';
         ?>
-        
+           <?php
+                foreach($produits as $produit){
+                    ?>
+        <article class="wiki">
+            <embed src="https://fr.wikipedia.org/wiki/<?php echo utf8_encode( $produit['Nom']) ?>#firstHeading" width="100%" height="496" object-fit= "contain"/>
+        </article>
+        <?php  
+                }
+                ?>
         <main class="contenair-produit">
       <?php
                 foreach($produits as $produit){
                     ?>
                 <article class="instru">
+                    <h1><?php echo utf8_encode ($produit['Nom']) ?></h1>
                         <figure>
                             <img title= <?php echo $produit['Nom'] ?> src="picture/<?php echo $produit['Image']?>" alt="Image <?php echo $produit['Nom'] ?>">
-                            <figcaption><?php echo utf8_encode ($produit['Nom'])?> </figcaption>
+                            <figcaption><?php echo utf8_encode ($produit['Formations'])?> </figcaption>
                         </figure>
                         <p> <?php echo utf8_encode ($produit['Description']) ?></p>
-                    </article>
+                </article>
                     <?php  
                 }
                 ?> 
