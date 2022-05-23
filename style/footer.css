@@ -1,5 +1,10 @@
 @import "ressources.css";
 
+footer h1 {
+  font-size: 26px;
+  font-family: 'RobotoSlab', sans-serif;
+}
+
 .contener{
   display: flex;
   flex-direction: column;
@@ -16,7 +21,7 @@
 }
 
 footer p {
-  text-align: center !important;
+  text-align: center;
   font-family: 'Nunito', sans-serif;
   font-size: 20px;
 }
@@ -37,13 +42,13 @@ footer nav{
 .contener-logo{
   width:auto;
   height:35px;
-  border-radius: 20px;
+  border-radius: 22.5px;
   background-color: rgba(255, 255, 255, 0.658);
   position: absolute;
   font-size: 30px;
   color: rgb(7, 3, 3);
   box-sizing: content-box;
-  padding:0 10px 5px 10px;
+  padding:5px 10px;
   transition: all .5s;
 
   
@@ -51,6 +56,7 @@ footer nav{
 .fa-brands{
   font-size: 35px;
   display: inline-block;
+  padding: 5px 0;
   transition-duration: .5s;
   opacity: 0;
   cursor: pointer;
