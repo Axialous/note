@@ -70,6 +70,10 @@ header nav > button:hover, header nav > form > button:hover {
     transform: scale(111%);
 }
 
+#bouton-back-office:hover {
+    transform: scale(111%) rotate(-45deg);
+}
+
 header nav > input {
     background: url(../images/icones/menu.svg) center no-repeat;
     background-size: 40px;

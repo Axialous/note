@@ -60,7 +60,7 @@ $formations = $donnees_formations->fetchAll();
         include 'PHP/header.php';
         ?>
         <main>
-            <section class="container-fluid py-5">
+            <section id="form-ajouter" class="container-fluid py-5">
                 <article class="mx-auto col-6 py-2 mx-2 border border-dark rounded">
                     <form  action="PHP/ajouter_instrument.php" method="post" enctype="multipart/form-data">
                         <h1 class="display-5 fw-bold mx-4">Ajouter un nouvel instrument : </h1>

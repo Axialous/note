@@ -8,6 +8,9 @@
             <?php
             if (isset($_SESSION['ID_Utilisateur'])) {
             ?>
+                <form action="utilisateur.php">
+                    <button id="bouton-back-office" type=submit style="background-image: url(images/icones/clef.svg);"></button>
+                </form>
                 <form action="PHP/deconnexion.php">
                     <button type=submit style="background-image: url(images/icones/compte-<?= $_SESSION['Sexe'] ?>.svg);"></button>
                 </form>
